@@ -205,25 +205,32 @@ export default function Gallery() {
                         </Box>
                     </Box>
 
-                    {/* GRID */}
-                    <Grid
-                        templateColumns={{
-                            base: "1fr",
-                            sm: "repeat(2,1fr)",
-                            md: "repeat(3,1fr)",
-                            lg: "repeat(4,1fr)",
+                    <Box
+                        sx={{
+                            columnCount: {
+                                base: 1,
+                                sm: 2,
+                                md: 3,
+                                lg: 4,
+                            },
+                            columnGap: {
+                                base: "16px",
+                                md: "32px",
+                            },
                         }}
-                        gap={{ base: 4, md: 8 }}
                     >
                         {filteredPaintings.map((painting, index) => (
                             <MotionBox
                                 key={painting._id}
+                                mb={{ base: 4, md: 8 }}
+                                sx={{
+                                    breakInside: "avoid",
+                                }}
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.25 }}
                                 transition={{
                                     duration: 0.6,
-                                    ease: "easeOut",
                                     delay: index * 0.02,
                                 }}
                             >
@@ -245,22 +252,23 @@ export default function Gallery() {
                                 >
                                     {/* IMAGE */}
                                     <Box position="relative" overflow="hidden">
-                                        <Image
-                                            src={painting.imageUrls?.[0]}
-                                            fallbackSrc="https://via.placeholder.com/400"
-                                            h={{
-                                                base: "200px",
-                                                md: `${300 + (index % 5) * 40}px`,
-                                            }}
-                                            w="100%"
-                                            objectFit="cover"
-                                            transition="all 0.6s ease"
-                                            _groupHover={{
-                                                transform: "scale(1.09)",
-                                                filter: "brightness(0.75)",
-                                            }}
-                                        />
-
+                                        <Box
+                                            position="relative"
+                                            overflow="hidden"
+                                        >
+                                            <Image
+                                                src={painting.imageUrls?.[0]}
+                                                fallbackSrc="https://via.placeholder.com/400"
+                                                w="100%"
+                                                h="auto"
+                                                objectFit="cover"
+                                                transition="all 0.6s ease"
+                                                _groupHover={{
+                                                    transform: "scale(1.09)",
+                                                    filter: "brightness(0.75)",
+                                                }}
+                                            />
+                                        </Box>
                                         <Box
                                             position="absolute"
                                             bottom={0}
@@ -311,7 +319,34 @@ export default function Gallery() {
                                 </Box>
                             </MotionBox>
                         ))}
-                    </Grid>
+                    </Box>
+
+                    {/* GRID
+                    <Grid
+                        templateColumns={{
+                            base: "1fr",
+                            sm: "repeat(2,1fr)",
+                            md: "repeat(3,1fr)",
+                            lg: "repeat(4,1fr)",
+                        }}
+                        gap={{ base: 4, md: 8 }}
+                    >
+                        {filteredPaintings.map((painting, index) => (
+                            <MotionBox
+                                key={painting._id}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.25 }}
+                                transition={{
+                                    duration: 0.6,
+                                    ease: "easeOut",
+                                    delay: index * 0.02,
+                                }}
+                            >
+                                
+                            </MotionBox>
+                        ))}
+                    </Grid> */}
                 </Container>
             </Box>
         </>
