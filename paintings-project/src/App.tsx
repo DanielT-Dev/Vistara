@@ -9,46 +9,66 @@ import Gallery from "./pages/Gallery";
 import GraphView from "./pages/GraphView";
 import PaintingDetails from "./pages/PaintingDetails";
 import PageTransition from "./components/PageTransition";
+import ProtectedRoute from "./components/ProtectedRoute";
+
 import { useEffect } from "react";
 import { useAppDispatch } from "./hooks/useAppDispatch";
-import ProtectedRoute from "./components/ProtectedRoute";
 import { initializeAuth } from "./store/authSlice";
 
+
 export default function App() {
+
     const location = useLocation();
     const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        const token = localStorage.getItem("token");
 
-        if (!token) return;
+    useEffect(() => {
+
+        const token = localStorage.getItem("token");
+        const user = localStorage.getItem("user");
+
+
+        if (!token || !user) {
+            return;
+        }
+
 
         try {
-            const payload = JSON.parse(
-                atob(token.split(".")[1])
-            );
 
             dispatch(
                 initializeAuth({
                     token,
-                    user: {
-                        id: payload.id,
-                        username: payload.username,
-                        email: payload.email,
-                    },
+                    user: JSON.parse(user),
                 })
             );
+
+
         } catch (err) {
-            console.error("Invalid token");
+
+            console.error(
+                "Failed to restore authentication"
+            );
 
             localStorage.removeItem("token");
             localStorage.removeItem("user");
+
         }
+
+
     }, [dispatch]);
 
+
+
     return (
-        <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
+        <AnimatePresence
+            mode="wait"
+        >
+
+            <Routes
+                location={location}
+                key={location.pathname}
+            >
+
                 <Route
                     path="/"
                     element={
@@ -57,6 +77,7 @@ export default function App() {
                         </PageTransition>
                     }
                 />
+
 
                 <Route
                     path="/gallery"
@@ -69,6 +90,7 @@ export default function App() {
                     }
                 />
 
+
                 <Route
                     path="/graph"
                     element={
@@ -79,6 +101,7 @@ export default function App() {
                         </ProtectedRoute>
                     }
                 />
+
 
                 <Route
                     path="/painting/:id"
@@ -91,6 +114,7 @@ export default function App() {
                     }
                 />
 
+
                 <Route
                     path="/login"
                     element={
@@ -100,6 +124,7 @@ export default function App() {
                     }
                 />
 
+
                 <Route
                     path="/signup"
                     element={
@@ -108,7 +133,9 @@ export default function App() {
                         </PageTransition>
                     }
                 />
+
             </Routes>
+
         </AnimatePresence>
     );
 }

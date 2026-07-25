@@ -1,21 +1,33 @@
 import { Navigate } from "react-router-dom";
-import { useAppSelector } from "../hooks/useAppDispatch";
+import { useAppSelector } from "../hooks/useAppDispatch"
 
-interface Props {
-    children: React.ReactNode;
-}
 
 export default function ProtectedRoute({
     children,
-}: Props) {
+}: {
+    children: React.ReactNode;
+}) {
 
-    const isAuthenticated = useAppSelector(
-        (state) => state.auth.isAuthenticated
+    const {
+        isAuthenticated,
+        authInitialized,
+    } = useAppSelector(
+        (state) => state.auth
     );
 
 
+    if (!authInitialized) {
+        return null;
+    }
+
+
     if (!isAuthenticated) {
-        return <Navigate to="/login" replace />;
+        return (
+            <Navigate
+                to="/login"
+                replace
+            />
+        );
     }
 
 
