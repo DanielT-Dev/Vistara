@@ -8,7 +8,7 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=ts,js,react,html,css,vite,npm,nodejs,express,mongodb,nodemon" />
+    <img src="https://skillicons.dev/icons?i=ts,js,react,redux,html,css,vite,npm,nodejs,express,mongodb,nodemon" />
   </a>
 </p>
 
@@ -17,12 +17,12 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
 | Category | Technologies |
 |----------|--------------|
 | **Languages** | ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) |
-| **Frontend** | ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white) ![ForceGraph2D](https://img.shields.io/badge/ForceGraph2D-6C2BD9?style=for-the-badge&logo=datadog&logoColor=white) |
+| **Frontend** | ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white) ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white) ![ForceGraph2D](https://img.shields.io/badge/ForceGraph2D-6C2BD9?style=for-the-badge&logo=datadog&logoColor=white) |
 | **Styling** | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![ChakraUI](https://img.shields.io/badge/Chakra--UI-319795?style=for-the-badge&logo=chakra-ui&logoColor=white) |
 | **Build Tools** | ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) |
 | **Backend** | ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white) ![Nodemon](https://img.shields.io/badge/Nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=white) |
 | **Database** | ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) |
-| **Security** | ![Bcrypt](https://img.shields.io/badge/Bcrypt-003A70?style=for-the-badge&logo=letsencrypt&logoColor=white) |
+| **Security** | ![Bcrypt](https://img.shields.io/badge/Bcrypt-003A70?style=for-the-badge&logo=letsencrypt&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white) |
 | **Logging** | ![Winston](https://img.shields.io/badge/Winston-6C2BD9?style=for-the-badge&logo=winston&logoColor=white) |
 
 ## Database Connection (MongoDB + Mongoose)
@@ -293,6 +293,36 @@ const token = jwt.sign(
 ```
 The token is returned to the frontend and stored locally. It is later used to identify the authenticated user.
 
+## State Management with Redux
+
+Redux Toolkit was used to manage authentication state globally across the application. An `authSlice` stores the current user, authentication token, and authentication status, allowing different components such as the Navbar and protected routes to access authentication information consistently.
+
+The authentication state is persisted using `localStorage`, allowing the application to restore the user session after a page refresh. Separate actions are used for logging in, restoring an existing session, and logging out.
+
+```js
+const authSlice = createSlice({
+  name: "auth",
+  initialState: {
+    user: null,
+    token: null,
+    isAuthenticated: false,
+  },
+  reducers: {
+    login(state, action) {
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+      state.isAuthenticated = true;
+    },
+
+    logout(state) {
+      state.user = null;
+      state.token = null;
+      state.isAuthenticated = false;
+    },
+  },
+});
+```
+
 ## Validation
 
   <img 
@@ -324,3 +354,21 @@ Password validation checks include:
 * Special characters
 
 The signup form prevents weak passwords from being submitted and gives immediate feedback while the user is typing.
+
+## Protected Routes
+
+Protected routes use the Redux authentication state to control access to private pages. If a user is not authenticated, they are automatically redirected to the login page.
+
+```js
+function ProtectedRoute({ children }) {
+  const isAuthenticated = useAppSelector(
+    (state) => state.auth.isAuthenticated
+  );
+
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+}
+```
