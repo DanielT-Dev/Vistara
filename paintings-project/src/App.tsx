@@ -11,7 +11,8 @@ import PaintingDetails from "./pages/PaintingDetails";
 import PageTransition from "./components/PageTransition";
 import { useEffect } from "react";
 import { useAppDispatch } from "./hooks/useAppDispatch";
-import { login } from "./store/authSlice";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { initializeAuth } from "./store/authSlice";
 
 export default function App() {
     const location = useLocation();
@@ -28,7 +29,7 @@ export default function App() {
             );
 
             dispatch(
-                login({
+                initializeAuth({
                     token,
                     user: {
                         id: payload.id,
@@ -41,9 +42,10 @@ export default function App() {
             console.error("Invalid token");
 
             localStorage.removeItem("token");
+            localStorage.removeItem("user");
         }
     }, [dispatch]);
-    
+
     return (
         <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
@@ -59,18 +61,33 @@ export default function App() {
                 <Route
                     path="/gallery"
                     element={
-                        <PageTransition>
-                            <Gallery />
-                        </PageTransition>
+                        <ProtectedRoute>
+                            <PageTransition>
+                                <Gallery />
+                            </PageTransition>
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/graph"
+                    element={
+                        <ProtectedRoute>
+                            <PageTransition>
+                                <GraphView />
+                            </PageTransition>
+                        </ProtectedRoute>
                     }
                 />
 
                 <Route
                     path="/painting/:id"
                     element={
-                        <PageTransition>
-                            <PaintingDetails />
-                        </PageTransition>
+                        <ProtectedRoute>
+                            <PageTransition>
+                                <PaintingDetails />
+                            </PageTransition>
+                        </ProtectedRoute>
                     }
                 />
 
@@ -88,15 +105,6 @@ export default function App() {
                     element={
                         <PageTransition>
                             <SignUp />
-                        </PageTransition>
-                    }
-                />
-
-                <Route
-                    path="/graph"
-                    element={
-                        <PageTransition>
-                            <GraphView />
                         </PageTransition>
                     }
                 />
