@@ -137,7 +137,7 @@ export default function SignUp() {
 
       setTimeout(() => {
         navigate("/login");
-      }, 1500);
+      }, 1000);
 
     } catch (err: any) {
 

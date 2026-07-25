@@ -14,6 +14,8 @@ import { validateLogin } from "../utils/loginValidation";
 import { loginUser } from "../api/users";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useAppDispatch } from "../hooks/useAppDispatch";
+import { login } from "../store/authSlice";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -34,6 +36,7 @@ export default function Login() {
     reset,
   } = useAuthForm();
 
+  const dispatch = useAppDispatch();
 
   const handleLogin = async () => {
     const result = validateLogin(email, password);
@@ -55,17 +58,14 @@ export default function Login() {
       );
 
 
-      localStorage.setItem(
-        "token",
-        data.token
+      dispatch(
+        login({
+          user: data.user,
+          token: data.token,
+        })
       );
-
-
-      localStorage.setItem(
-        "user",
-        JSON.stringify(data.user)
-      );
-
+      
+      localStorage.setItem("token", data.token);
 
       toast({
         title: "Login successful",
@@ -81,7 +81,7 @@ export default function Login() {
 
       setTimeout(() => {
         navigate("/gallery");
-      }, 1500);
+      }, 1000);
 
     } catch (err: any) {
 

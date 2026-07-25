@@ -25,10 +25,9 @@ import {
     useNavigate,
 } from "react-router-dom";
 
-import {
-    useEffect,
-    useState,
-} from "react";
+import { useAppSelector } from "../hooks/useAppDispatch";
+import { useAppDispatch } from "../hooks/useAppDispatch";
+import { logout } from "../store/authSlice";
 
 
 export default function Navbar() {
@@ -42,34 +41,16 @@ export default function Navbar() {
     } = useDisclosure();
 
 
-    const [isLoggedIn, setIsLoggedIn] =
-        useState(false);
+    const isLoggedIn = useAppSelector(
+        (state) => state.auth.isAuthenticated
+    );
 
-
-
-    useEffect(() => {
-
-        const user =
-            localStorage.getItem("user");
-
-        setIsLoggedIn(!!user);
-
-
-    }, []);
-
-
+    const dispatch = useAppDispatch();
 
     const handleLogout = () => {
-
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-
-        setIsLoggedIn(false);
-
+        dispatch(logout());
         navigate("/login");
     };
-
-
 
     const navItems = [
         {

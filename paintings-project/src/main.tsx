@@ -7,13 +7,21 @@ import "./styles/animations.css";
 
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import AuthInitializer from "./components/AuthInitializer";
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ChakraProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ChakraProvider>
+    <Provider store={store}>
+      <AuthInitializer>
+        <ChakraProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ChakraProvider>
+      </AuthInitializer>
+    </Provider>
   </StrictMode>,
 )

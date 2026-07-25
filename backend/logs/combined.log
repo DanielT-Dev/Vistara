@@ -1488,3 +1488,19 @@ CastError: Cast to [ObjectId] failed for value "[\n' +
 [2026-07-14 23:35:42] INFO: User login attempt {"email":"alex@email.com"}
 [2026-07-14 23:35:42] ERROR: Login failed {"error":{}}
 [2026-07-14 23:35:42] INFO: POST /api/users/login [31m500[39m 99ms {"meta":{}}
+[2026-07-15 00:16:16] INFO: Connected to MongoDB
+[2026-07-15 00:16:16] INFO: Server running on http://localhost:5000
+[2026-07-25 17:32:43] INFO: Connected to MongoDB
+[2026-07-25 17:32:43] INFO: Server running on http://localhost:5000
+[2026-07-25 17:33:02] INFO: Fetching paintings {}
+[2026-07-25 17:33:02] INFO: Fetching all categories
+[2026-07-25 17:33:02] INFO: Categories fetched successfully {"count":7}
+[2026-07-25 17:33:02] INFO: GET /api/categories [36m304[39m 80ms {"meta":{}}
+[2026-07-25 17:33:02] INFO: Fetching all categories
+[2026-07-25 17:33:02] INFO: Categories fetched successfully {"count":7}
+[2026-07-25 17:33:02] INFO: GET /api/categories [36m304[39m 47ms {"meta":{}}
+[2026-07-25 17:33:02] INFO: Paintings fetched successfully {"count":24}
+[2026-07-25 17:33:02] INFO: GET /api/paintings? [32m200[39m 211ms {"meta":{}}
+[2026-07-25 17:33:02] INFO: Fetching paintings {}
+[2026-07-25 17:33:02] INFO: Paintings fetched successfully {"count":24}
+[2026-07-25 17:33:02] INFO: GET /api/paintings? [36m304[39m 105ms {"meta":{}}
