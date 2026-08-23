@@ -33,7 +33,6 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
     src="./frontend/public/mobile-gallery1.png" 
     width="37%" 
     height="630px"
-    style="marginRight: 30px;"
   />
   <img 
     src="./frontend/public/mobile-nav1.png" 
