@@ -31,14 +31,14 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
   <br/>
   <img 
     src="./frontend/public/mobile-gallery1.png" 
-    width="40%" 
-    height="650px"
+    width="37%" 
+    height="630px"
     style="marginRight: 30px;"
   />
   <img 
     src="./frontend/public/mobile-nav1.png" 
-    width="40%" 
-    height="650px"
+    width="37%" 
+    height="630px"
   />
   <br/>
   <br/>
