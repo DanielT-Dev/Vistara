@@ -6,14 +6,6 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
 
 ## Technology Stack
 
-<p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=ts,js,react,redux,html,css,vite,npm,nodejs,express,mongodb,nodemon" />
-  </a>
-</p>
-
-## Detailed Stack
-
 | Category | Technologies |
 |----------|--------------|
 | **Languages** | ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) |
