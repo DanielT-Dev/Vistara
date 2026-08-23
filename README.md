@@ -220,6 +220,17 @@ const token = jwt.sign(
 ```
 The token is returned to the frontend and stored locally. It is later used to identify the authenticated user.
 
+<div style="display: felx; flexDirection: row;">
+    <img 
+      src="./frontend/public/login-ok1.png" 
+      width="39%" 
+    />
+    <img 
+      src="./frontend/public/login-bad1.png" 
+      width="39%" 
+    />
+  </div>
+
 ## Validation
 
   <img 
