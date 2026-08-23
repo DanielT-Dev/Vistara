@@ -203,6 +203,20 @@ const passwordMatch = await bcrypt.compare(
 ```
 
 ## JWT Authentication
+
+<div style="display: felx; flexDirection: row;">
+    <img 
+      src="./frontend/public/login-bad1.png" 
+      width="47%" 
+      height="480px"
+    />
+    <img 
+      src="./frontend/public/login-ok1.png" 
+      width="47%" 
+      height="480px"
+    />
+  </div>
+
 After successful authentication, the backend generates a JWT token:
 
 ```js
@@ -219,19 +233,6 @@ const token = jwt.sign(
 );
 ```
 The token is returned to the frontend and stored locally. It is later used to identify the authenticated user.
-
-<div style="display: felx; flexDirection: row;">
-    <img 
-      src="./frontend/public/login-bad1.png" 
-      width="47%" 
-      height="480px"
-    />
-    <img 
-      src="./frontend/public/login-ok1.png" 
-      width="47%" 
-      height="480px"
-    />
-  </div>
 
 ## Validation
 
