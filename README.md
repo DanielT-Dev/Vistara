@@ -21,18 +21,20 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
 
   <img 
     src="./frontend/public/landing2.png" 
-    width="70%"
+    width="60%"
   />
+  <br/>
   <img 
     src="./frontend/public/mobile-gallery1.png" 
-    width="37%" 
-    height="530"
+    width="30%" 
+    height="560px"
   />
   <img 
     src="./frontend/public/mobile-nav1.png" 
-    width="37%" 
-    height="530"
+    width="30%" 
+    height="560px"
   />
+  <br/>
 
 ## Database Connection (MongoDB + Mongoose)
 
