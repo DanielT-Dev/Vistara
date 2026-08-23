@@ -31,12 +31,12 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
   <img 
     src="./frontend/public/mobile-gallery1.png" 
     width="35%" 
-    height="590px"
+    height="500px"
   />
   <img 
     src="./frontend/public/mobile-nav1.png" 
     width="35%" 
-    height="590px"
+    height="500px"
   />
   <br/>
   <br/>
