@@ -11,7 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import { createUser } from "../api/users";
+import { createUser } from "../api/userApi";
 import PasswordStrength from "../components/PasswordStrength";
 import { evaluatePassword } from "../utils/passwordStrength";
 import { useNavigate } from "react-router-dom";

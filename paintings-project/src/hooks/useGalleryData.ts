@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getPaintings } from "../api/paintings";
-import { getCategories } from "../api/categories";
+import { getPaintings } from "../api/paintingApi";
+import { getCategories } from "../api/categoryApi";
 
 type Painting = {
     _id?: string;
