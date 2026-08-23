@@ -21,21 +21,20 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
 
   <img 
     src="./frontend/public/landing2.png" 
-    width="80%"
-    style="marginBottom: 30px;"
+    style="marginTop: 30px; marginBottom: 30px;"
   />
   <br/>
   <br/>
   <br/>
   <img 
     src="./frontend/public/mobile-gallery1.png" 
-    width="30%" 
+    width="40%" 
     height="600px"
-    style="marginRight: 20%;"
+    style="marginRight: 30px;"
   />
   <img 
     src="./frontend/public/mobile-nav1.png" 
-    width="30%" 
+    width="40%" 
     height="600px"
   />
   <br/>
