@@ -28,14 +28,16 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
   />
   <br/>
   <br/>
-  <img 
-    src="./frontend/public/mobile-gallery1.png" 
-    width="35%" 
-  />
-  <img 
-    src="./frontend/public/mobile-nav1.png" 
-    width="35%" 
-  />
+  <div style="display: felx; flexDirection: row;">
+    <img 
+      src="./frontend/public/mobile-gallery1.png" 
+      width="35%" 
+    />
+    <img 
+      src="./frontend/public/mobile-nav1.png" 
+      width="35%" 
+    />
+  </div>
   <br/>
   <br/>
 
