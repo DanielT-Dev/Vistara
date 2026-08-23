@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="'Segoe UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" font-family="'Segoe UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#1a1a2e"/>
@@ -23,16 +23,6 @@
     <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
     </filter>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="#8899aa"/>
-    </marker>
     <marker id="arrowheadLight" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
       <polygon points="0 0, 8 3, 0 6" fill="#4fc3f7"/>
     </marker>
@@ -42,13 +32,10 @@
     <marker id="arrowheadPurple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
       <polygon points="0 0, 8 3, 0 6" fill="#ce93d8"/>
     </marker>
-    <marker id="arrowheadRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="#ef9a9a"/>
-    </marker>
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="900" fill="url(#bgGrad)"/>
+  <rect width="1200" height="820" fill="url(#bgGrad)"/>
   
   <!-- Subtle grid pattern -->
   <g opacity="0.03">
@@ -59,214 +46,175 @@
     <line x1="0" y1="500" x2="1200" y2="500" stroke="#fff" stroke-width="0.5"/>
     <line x1="0" y1="600" x2="1200" y2="600" stroke="#fff" stroke-width="0.5"/>
     <line x1="0" y1="700" x2="1200" y2="700" stroke="#fff" stroke-width="0.5"/>
-    <line x1="0" y1="800" x2="1200" y2="800" stroke="#fff" stroke-width="0.5"/>
-    <line x1="200" y1="0" x2="200" y2="900" stroke="#fff" stroke-width="0.5"/>
-    <line x1="400" y1="0" x2="400" y2="900" stroke="#fff" stroke-width="0.5"/>
-    <line x1="600" y1="0" x2="600" y2="900" stroke="#fff" stroke-width="0.5"/>
-    <line x1="800" y1="0" x2="800" y2="900" stroke="#fff" stroke-width="0.5"/>
-    <line x1="1000" y1="0" x2="1000" y2="900" stroke="#fff" stroke-width="0.5"/>
+    <line x1="200" y1="0" x2="200" y2="820" stroke="#fff" stroke-width="0.5"/>
+    <line x1="400" y1="0" x2="400" y2="820" stroke="#fff" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="820" stroke="#fff" stroke-width="0.5"/>
+    <line x1="800" y1="0" x2="800" y2="820" stroke="#fff" stroke-width="0.5"/>
+    <line x1="1000" y1="0" x2="1000" y2="820" stroke="#fff" stroke-width="0.5"/>
   </g>
-
-  <!-- Title -->
-  <text x="600" y="42" text-anchor="middle" fill="#e0e0e0" font-size="22" font-weight="700" letter-spacing="1">Testing Architecture — User/Auth Module</text>
-  <text x="600" y="65" text-anchor="middle" fill="#8899aa" font-size="13" letter-spacing="0.5">React + TypeScript · Jest · React Testing Library</text>
 
   <!-- ============================================ -->
   <!-- LAYER 4: COMPONENT TESTING (TOP)             -->
   <!-- ============================================ -->
   
   <!-- Layer 4 container -->
-  <rect x="50" y="90" width="1100" height="170" rx="10" fill="rgba(183,28,28,0.08)" stroke="#c62828" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="65" y="115" fill="#ef9a9a" font-size="12" font-weight="600" letter-spacing="1">LAYER 4 — REACT COMPONENT TESTING (PLANNED)</text>
+  <rect x="50" y="40" width="1100" height="170" rx="10" fill="rgba(183,28,28,0.08)" stroke="#c62828" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="65" y="65" fill="#ef9a9a" font-size="12" font-weight="600" letter-spacing="1">LAYER 4 — REACT COMPONENT TESTING</text>
   
   <!-- Login.test.tsx box -->
-  <rect x="80" y="130" width="290" height="115" rx="8" fill="url(#compGrad)" filter="url(#shadow)" opacity="0.9"/>
-  <text x="225" y="152" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Login.test.tsx</text>
-  <text x="225" y="172" text-anchor="middle" fill="#ffcdd2" font-size="11" font-family="monospace">React Testing Library</text>
-  <line x1="100" y1="180" x2="350" y2="180" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
-  <text x="120" y="198" fill="#ffcdd2" font-size="11">1. Render &lt;Login /&gt;</text>
-  <text x="120" y="215" fill="#ffcdd2" font-size="11">2. Type email + password</text>
-  <text x="120" y="232" fill="#ffcdd2" font-size="11">3. Click submit → mock store</text>
-  
-  <!-- Flow arrows within component layer -->
-  <text x="395" y="185" fill="#ef9a9a" font-size="20">→</text>
-  <text x="420" y="185" fill="#ef9a9a" font-size="11" font-family="monospace">fireEvent</text>
+  <rect x="80" y="80" width="290" height="115" rx="8" fill="url(#compGrad)" filter="url(#shadow)" opacity="0.9"/>
+  <text x="225" y="102" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Login.test.tsx</text>
+  <text x="225" y="122" text-anchor="middle" fill="#ffcdd2" font-size="11" font-family="monospace">React Testing Library</text>
+  <line x1="100" y1="130" x2="350" y2="130" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
+  <text x="120" y="148" fill="#ffcdd2" font-size="11">1. Render &lt;Login /&gt;</text>
+  <text x="120" y="165" fill="#ffcdd2" font-size="11">2. Type email + password</text>
+  <text x="120" y="182" fill="#ffcdd2" font-size="11">3. Click submit → mock store</text>
   
   <!-- Component interaction box -->
-  <rect x="450" y="130" width="280" height="115" rx="8" fill="rgba(198,40,40,0.25)" stroke="#ef5350" stroke-width="1" filter="url(#shadow)"/>
-  <text x="590" y="152" text-anchor="middle" fill="#ffcdd2" font-size="13" font-weight="600">User Flow</text>
-  <line x1="470" y1="160" x2="710" y2="160" stroke="#ffcdd2" stroke-width="0.5" opacity="0.3"/>
-  <text x="475" y="178" fill="#ffcdd2" font-size="11">type → submit → API call</text>
-  <text x="475" y="195" fill="#ffcdd2" font-size="11">→ Redux state update</text>
-  <text x="475" y="212" fill="#ffcdd2" font-size="11">→ UI re-render</text>
-  <text x="475" y="229" fill="#ffcdd2" font-size="11">→ assert DOM elements</text>
+  <rect x="400" y="80" width="300" height="115" rx="8" fill="rgba(198,40,40,0.25)" stroke="#ef5350" stroke-width="1" filter="url(#shadow)"/>
+  <text x="550" y="102" text-anchor="middle" fill="#ffcdd2" font-size="13" font-weight="600">User Flow</text>
+  <line x1="420" y1="110" x2="680" y2="110" stroke="#ffcdd2" stroke-width="0.5" opacity="0.3"/>
+  <text x="425" y="128" fill="#ffcdd2" font-size="11">type → submit → API call</text>
+  <text x="425" y="145" fill="#ffcdd2" font-size="11">→ Redux state update</text>
+  <text x="425" y="162" fill="#ffcdd2" font-size="11">→ UI re-render</text>
+  <text x="425" y="179" fill="#ffcdd2" font-size="11">→ assert DOM elements</text>
 
-  <!-- Test result box -->
-  <rect x="760" y="130" width="370" height="115" rx="8" fill="rgba(198,40,40,0.15)" stroke="#ef5350" stroke-width="1" filter="url(#shadow)"/>
-  <text x="945" y="152" text-anchor="middle" fill="#ffcdd2" font-size="13" font-weight="600">What gets tested</text>
-  <line x1="780" y1="160" x2="1110" y2="160" stroke="#ffcdd2" stroke-width="0.5" opacity="0.3"/>
-  <text x="780" y="178" fill="#ffcdd2" font-size="11">• Form rendering + validation</text>
-  <text x="780" y="195" fill="#ffcdd2" font-size="11">• User interaction (RTL)</text>
-  <text x="780" y="212" fill="#ffcdd2" font-size="11">• Redux integration via mock store</text>
-  <text x="780" y="229" fill="#ffcdd2" font-size="11">• Async API call + UI update</text>
+  <!-- What gets tested box -->
+  <rect x="730" y="80" width="400" height="115" rx="8" fill="rgba(198,40,40,0.15)" stroke="#ef5350" stroke-width="1" filter="url(#shadow)"/>
+  <text x="930" y="102" text-anchor="middle" fill="#ffcdd2" font-size="13" font-weight="600">Coverage</text>
+  <line x1="750" y1="110" x2="1110" y2="110" stroke="#ffcdd2" stroke-width="0.5" opacity="0.3"/>
+  <text x="750" y="128" fill="#ffcdd2" font-size="11">• Form rendering + validation</text>
+  <text x="750" y="145" fill="#ffcdd2" font-size="11">• User interaction (RTL)</text>
+  <text x="750" y="162" fill="#ffcdd2" font-size="11">• Redux integration via mock store</text>
+  <text x="750" y="179" fill="#ffcdd2" font-size="11">• Async API call + UI update</text>
 
   <!-- ============================================ -->
   <!-- LAYER 3: REDUX AUTHENTICATION                 -->
   <!-- ============================================ -->
 
   <!-- Layer 3 container -->
-  <rect x="50" y="280" width="1100" height="170" rx="10" fill="rgba(106,27,154,0.08)" stroke="#8e24aa" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="65" y="305" fill="#ce93d8" font-size="12" font-weight="600" letter-spacing="1">LAYER 3 — REDUX AUTHENTICATION LAYER</text>
+  <rect x="50" y="230" width="1100" height="170" rx="10" fill="rgba(106,27,154,0.08)" stroke="#8e24aa" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="65" y="255" fill="#ce93d8" font-size="12" font-weight="600" letter-spacing="1">LAYER 3 — REDUX AUTHENTICATION LAYER</text>
 
   <!-- authSlice.ts -->
-  <rect x="80" y="320" width="240" height="115" rx="8" fill="url(#reduxGrad)" filter="url(#shadow)" opacity="0.9"/>
-  <text x="200" y="342" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">authSlice.ts</text>
-  <text x="200" y="362" text-anchor="middle" fill="#e1bee7" font-size="11" font-family="monospace">Redux Toolkit</text>
-  <line x1="95" y1="370" x2="305" y2="370" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
-  <text x="105" y="388" fill="#e1bee7" font-size="11">• login(credentials)</text>
-  <text x="105" y="405" fill="#e1bee7" font-size="11">• initializeAuth()</text>
-  <text x="105" y="422" fill="#e1bee7" font-size="11">• finishAuthInitialization()</text>
+  <rect x="80" y="270" width="240" height="115" rx="8" fill="url(#reduxGrad)" filter="url(#shadow)" opacity="0.9"/>
+  <text x="200" y="292" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">authSlice.ts</text>
+  <text x="200" y="312" text-anchor="middle" fill="#e1bee7" font-size="11" font-family="monospace">Redux Toolkit</text>
+  <line x1="95" y1="320" x2="305" y2="320" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
+  <text x="105" y="338" fill="#e1bee7" font-size="11">• login(credentials)</text>
+  <text x="105" y="355" fill="#e1bee7" font-size="11">• initializeAuth()</text>
+  <text x="105" y="372" fill="#e1bee7" font-size="11">• finishAuthInitialization()</text>
   
   <!-- authSlice.test.ts -->
-  <rect x="350" y="320" width="260" height="115" rx="8" fill="rgba(142,36,170,0.25)" stroke="#ab47bc" stroke-width="1" filter="url(#shadow)"/>
-  <text x="480" y="342" text-anchor="middle" fill="#e1bee7" font-size="13" font-weight="700">authSlice.test.ts</text>
-  <text x="480" y="362" text-anchor="middle" fill="#e1bee7" font-size="11" font-family="monospace">Jest + Redux store</text>
-  <line x1="370" y1="370" x2="590" y2="370" stroke="#e1bee7" stroke-width="0.5" opacity="0.3"/>
-  <text x="375" y="388" fill="#e1bee7" font-size="11">• mock store dispatch</text>
-  <text x="375" y="405" fill="#e1bee7" font-size="11">• state transitions</text>
-  <text x="375" y="422" fill="#e1bee7" font-size="11">• localStorage persistence</text>
+  <rect x="350" y="270" width="260" height="115" rx="8" fill="rgba(142,36,170,0.25)" stroke="#ab47bc" stroke-width="1" filter="url(#shadow)"/>
+  <text x="480" y="292" text-anchor="middle" fill="#e1bee7" font-size="13" font-weight="700">authSlice.test.ts</text>
+  <text x="480" y="312" text-anchor="middle" fill="#e1bee7" font-size="11" font-family="monospace">Jest + Redux store</text>
+  <line x1="370" y1="320" x2="590" y2="320" stroke="#e1bee7" stroke-width="0.5" opacity="0.3"/>
+  <text x="375" y="338" fill="#e1bee7" font-size="11">• mock store dispatch</text>
+  <text x="375" y="355" fill="#e1bee7" font-size="11">• state transitions</text>
+  <text x="375" y="372" fill="#e1bee7" font-size="11">• localStorage persistence</text>
 
   <!-- Flow arrows -->
-  <path d="M 320 380 C 330 380, 335 380, 350 380" stroke="#ce93d8" stroke-width="1.5" fill="none" marker-end="url(#arrowheadPurple)"/>
-  <text x="330" y="373" fill="#ce93d8" font-size="9" font-family="monospace">import</text>
+  <path d="M 320 330 C 330 330, 335 330, 350 330" stroke="#ce93d8" stroke-width="1.5" fill="none" marker-end="url(#arrowheadPurple)"/>
 
   <!-- State box -->
-  <rect x="640" y="320" width="490" height="115" rx="8" fill="rgba(142,36,170,0.12)" stroke="#ce93d8" stroke-width="1" filter="url(#shadow)"/>
-  <text x="885" y="342" text-anchor="middle" fill="#e1bee7" font-size="13" font-weight="600">Redux State Shape</text>
-  <line x1="660" y1="350" x2="1110" y2="350" stroke="#e1bee7" stroke-width="0.5" opacity="0.3"/>
-  <text x="665" y="370" fill="#e1bee7" font-size="11" font-family="monospace">auth: {</text>
-  <text x="685" y="387" fill="#e1bee7" font-size="11" font-family="monospace">status: 'idle' | 'loading' | 'authenticated' | 'error'</text>
-  <text x="685" y="404" fill="#e1bee7" font-size="11" font-family="monospace">user: User | null</text>
-  <text x="685" y="421" fill="#e1bee7" font-size="11" font-family="monospace">isInitialized: boolean</text>
-  <text x="665" y="438" fill="#e1bee7" font-size="11" font-family="monospace">}</text>
+  <rect x="640" y="270" width="490" height="115" rx="8" fill="rgba(142,36,170,0.12)" stroke="#ce93d8" stroke-width="1" filter="url(#shadow)"/>
+  <text x="885" y="292" text-anchor="middle" fill="#e1bee7" font-size="13" font-weight="600">Redux State Shape</text>
+  <line x1="660" y1="300" x2="1110" y2="300" stroke="#e1bee7" stroke-width="0.5" opacity="0.3"/>
+  <text x="665" y="320" fill="#e1bee7" font-size="11" font-family="monospace">auth: {</text>
+  <text x="685" y="337" fill="#e1bee7" font-size="11" font-family="monospace">status: 'idle' | 'loading' | 'authenticated' | 'error'</text>
+  <text x="685" y="354" fill="#e1bee7" font-size="11" font-family="monospace">user: User | null</text>
+  <text x="685" y="371" fill="#e1bee7" font-size="11" font-family="monospace">isInitialized: boolean</text>
+  <text x="665" y="388" fill="#e1bee7" font-size="11" font-family="monospace">}</text>
 
   <!-- ============================================ -->
   <!-- LAYER 2: API LAYER                            -->
   <!-- ============================================ -->
 
   <!-- Layer 2 container -->
-  <rect x="50" y="470" width="1100" height="180" rx="10" fill="rgba(13,71,161,0.08)" stroke="#1976d2" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="65" y="495" fill="#64b5f6" font-size="12" font-weight="600" letter-spacing="1">LAYER 2 — API LAYER</text>
+  <rect x="50" y="420" width="1100" height="180" rx="10" fill="rgba(13,71,161,0.08)" stroke="#1976d2" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="65" y="445" fill="#64b5f6" font-size="12" font-weight="600" letter-spacing="1">LAYER 2 — API LAYER</text>
 
   <!-- userApi.ts -->
-  <rect x="80" y="510" width="280" height="125" rx="8" fill="url(#apiGrad)" filter="url(#shadow)" opacity="0.9"/>
-  <text x="220" y="532" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">userApi.ts</text>
-  <text x="220" y="552" text-anchor="middle" fill="#90caf9" font-size="11" font-family="monospace">fetch wrapper</text>
-  <line x1="95" y1="560" x2="345" y2="560" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
-  <text x="100" y="578" fill="#90caf9" font-size="10.5">getUsers()</text>
-  <text x="100" y="594" fill="#90caf9" font-size="10.5">getUserById(id)</text>
-  <text x="100" y="610" fill="#90caf9" font-size="10.5">createUser(data)</text>
-  <text x="100" y="626" fill="#90caf9" font-size="10.5">updateUser(id, data)</text>
-  <text x="100" y="642" fill="#90caf9" font-size="10.5">deleteUser(id) · loginUser(creds)</text>
+  <rect x="80" y="460" width="280" height="125" rx="8" fill="url(#apiGrad)" filter="url(#shadow)" opacity="0.9"/>
+  <text x="220" y="482" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">userApi.ts</text>
+  <text x="220" y="502" text-anchor="middle" fill="#90caf9" font-size="11" font-family="monospace">fetch wrapper</text>
+  <line x1="95" y1="510" x2="345" y2="510" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
+  <text x="100" y="528" fill="#90caf9" font-size="10.5">getUsers()</text>
+  <text x="100" y="544" fill="#90caf9" font-size="10.5">getUserById(id)</text>
+  <text x="100" y="560" fill="#90caf9" font-size="10.5">createUser(data)</text>
+  <text x="100" y="576" fill="#90caf9" font-size="10.5">updateUser(id, data)</text>
+  <text x="100" y="592" fill="#90caf9" font-size="10.5">deleteUser(id) · loginUser(creds)</text>
 
   <!-- userApi.test.ts -->
-  <rect x="395" y="510" width="290" height="125" rx="8" fill="rgba(25,118,210,0.2)" stroke="#42a5f5" stroke-width="1" filter="url(#shadow)"/>
-  <text x="540" y="532" text-anchor="middle" fill="#90caf9" font-size="13" font-weight="700">userApi.test.ts</text>
-  <text x="540" y="552" text-anchor="middle" fill="#90caf9" font-size="11" font-family="monospace">Jest + mock fetch</text>
-  <line x1="415" y1="560" x2="665" y2="560" stroke="#90caf9" stroke-width="0.5" opacity="0.3"/>
-  <text x="420" y="578" fill="#90caf9" font-size="10.5">✓ success responses (200)</text>
-  <text x="420" y="594" fill="#90caf9" font-size="10.5">✓ backend errors (4xx/5xx)</text>
-  <text x="420" y="610" fill="#90caf9" font-size="10.5">✓ network failures</text>
-  <text x="420" y="626" fill="#90caf9" font-size="10.5">✓ invalid JSON handling</text>
+  <rect x="395" y="460" width="290" height="125" rx="8" fill="rgba(25,118,210,0.2)" stroke="#42a5f5" stroke-width="1" filter="url(#shadow)"/>
+  <text x="540" y="482" text-anchor="middle" fill="#90caf9" font-size="13" font-weight="700">userApi.test.ts</text>
+  <text x="540" y="502" text-anchor="middle" fill="#90caf9" font-size="11" font-family="monospace">Jest + mock fetch</text>
+  <line x1="415" y1="510" x2="665" y2="510" stroke="#90caf9" stroke-width="0.5" opacity="0.3"/>
+  <text x="420" y="528" fill="#90caf9" font-size="10.5">✓ success responses (200)</text>
+  <text x="420" y="544" fill="#90caf9" font-size="10.5">✓ backend errors (4xx/5xx)</text>
+  <text x="420" y="560" fill="#90caf9" font-size="10.5">✓ network failures</text>
+  <text x="420" y="576" fill="#90caf9" font-size="10.5">✓ invalid JSON handling</text>
 
   <!-- Flow -->
-  <path d="M 360 570 C 375 570, 380 570, 395 570" stroke="#64b5f6" stroke-width="1.5" fill="none" marker-end="url(#arrowheadLight)"/>
-  <text x="370" y="563" fill="#64b5f6" font-size="9" font-family="monospace">mock</text>
+  <path d="M 360 520 C 375 520, 380 520, 395 520" stroke="#64b5f6" stroke-width="1.5" fill="none" marker-end="url(#arrowheadLight)"/>
 
   <!-- Notes box -->
-  <rect x="715" y="510" width="415" height="125" rx="8" fill="rgba(25,118,210,0.1)" stroke="#64b5f6" stroke-width="1" filter="url(#shadow)"/>
-  <text x="922" y="532" text-anchor="middle" fill="#90caf9" font-size="13" font-weight="600">Mock Strategy</text>
-  <line x1="735" y1="540" x2="1105" y2="540" stroke="#90caf9" stroke-width="0.5" opacity="0.3"/>
-  <text x="735" y="558" fill="#90caf9" font-size="11">• global.fetch = jest.fn()</text>
-  <text x="735" y="576" fill="#90caf9" font-size="11">• mockResolvedValueOnce()</text>
-  <text x="735" y="594" fill="#90caf9" font-size="11">• mockRejectedValueOnce()</text>
-  <text x="735" y="612" fill="#90caf9" font-size="11">• assert calledWith URL + options</text>
-  <text x="735" y="630" fill="#90caf9" font-size="11">• no real network requests</text>
+  <rect x="715" y="460" width="415" height="125" rx="8" fill="rgba(25,118,210,0.1)" stroke="#64b5f6" stroke-width="1" filter="url(#shadow)"/>
+  <text x="922" y="482" text-anchor="middle" fill="#90caf9" font-size="13" font-weight="600">Mock Strategy</text>
+  <line x1="735" y1="490" x2="1105" y2="490" stroke="#90caf9" stroke-width="0.5" opacity="0.3"/>
+  <text x="735" y="508" fill="#90caf9" font-size="11">• global.fetch = jest.fn()</text>
+  <text x="735" y="526" fill="#90caf9" font-size="11">• mockResolvedValueOnce()</text>
+  <text x="735" y="544" fill="#90caf9" font-size="11">• mockRejectedValueOnce()</text>
+  <text x="735" y="562" fill="#90caf9" font-size="11">• assert calledWith URL + options</text>
+  <text x="735" y="580" fill="#90caf9" font-size="11">• no real network requests</text>
 
   <!-- ============================================ -->
   <!-- LAYER 1: VALIDATION / UTILITIES (BOTTOM)     -->
   <!-- ============================================ -->
 
   <!-- Layer 1 container -->
-  <rect x="50" y="670" width="1100" height="190" rx="10" fill="rgba(27,94,32,0.08)" stroke="#43a047" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="65" y="695" fill="#a5d6a7" font-size="12" font-weight="600" letter-spacing="1">LAYER 1 — VALIDATION &amp; UTILITIES (PURE UNIT TESTS)</text>
+  <rect x="50" y="620" width="1100" height="170" rx="10" fill="rgba(27,94,32,0.08)" stroke="#43a047" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="65" y="645" fill="#a5d6a7" font-size="12" font-weight="600" letter-spacing="1">LAYER 1 — VALIDATION &amp; UTILITIES (PURE UNIT TESTS)</text>
 
   <!-- Three test boxes -->
-  <rect x="80" y="710" width="320" height="135" rx="8" fill="url(#validGrad)" filter="url(#shadow)" opacity="0.9"/>
-  <text x="240" y="732" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">authValidation.ts</text>
-  <text x="240" y="752" text-anchor="middle" fill="#a5d6a7" font-size="11" font-family="monospace">→ authValidation.test.ts</text>
-  <line x1="95" y1="760" x2="385" y2="760" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
-  <text x="105" y="780" fill="#c8e6c9" font-size="11">• validateEmail format</text>
-  <text x="105" y="797" fill="#c8e6c9" font-size="11">• validatePassword rules</text>
-  <text x="105" y="814" fill="#c8e6c9" font-size="11">• edge cases + empty inputs</text>
-  <text x="105" y="831" fill="#c8e6c9" font-size="11">• pure functions, no I/O</text>
+  <rect x="80" y="660" width="320" height="115" rx="8" fill="url(#validGrad)" filter="url(#shadow)" opacity="0.9"/>
+  <text x="240" y="682" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">authValidation.ts</text>
+  <text x="240" y="702" text-anchor="middle" fill="#a5d6a7" font-size="11" font-family="monospace">→ authValidation.test.ts</text>
+  <line x1="95" y1="710" x2="385" y2="710" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
+  <text x="105" y="730" fill="#c8e6c9" font-size="11">• validateEmail format</text>
+  <text x="105" y="747" fill="#c8e6c9" font-size="11">• validatePassword rules</text>
+  <text x="105" y="764" fill="#c8e6c9" font-size="11">• edge cases + empty inputs</text>
 
-  <rect x="430" y="710" width="320" height="135" rx="8" fill="rgba(67,160,71,0.2)" stroke="#66bb6a" stroke-width="1" filter="url(#shadow)"/>
-  <text x="590" y="732" text-anchor="middle" fill="#c8e6c9" font-size="13" font-weight="700">loginValidation.ts</text>
-  <text x="590" y="752" text-anchor="middle" fill="#a5d6a7" font-size="11" font-family="monospace">→ loginValidation.test.ts</text>
-  <line x1="445" y1="760" x2="735" y2="760" stroke="#a5d6a7" stroke-width="0.5" opacity="0.3"/>
-  <text x="455" y="780" fill="#c8e6c9" font-size="11">• input sanitization</text>
-  <text x="455" y="797" fill="#c8e6c9" font-size="11">• required-field checks</text>
-  <text x="455" y="814" fill="#c8e6c9" font-size="11">• error message generation</text>
-  <text x="455" y="831" fill="#c8e6c9" font-size="11">• returns boolean or errors</text>
+  <rect x="430" y="660" width="320" height="115" rx="8" fill="rgba(67,160,71,0.2)" stroke="#66bb6a" stroke-width="1" filter="url(#shadow)"/>
+  <text x="590" y="682" text-anchor="middle" fill="#c8e6c9" font-size="13" font-weight="700">loginValidation.ts</text>
+  <text x="590" y="702" text-anchor="middle" fill="#a5d6a7" font-size="11" font-family="monospace">→ loginValidation.test.ts</text>
+  <line x1="445" y1="710" x2="735" y2="710" stroke="#a5d6a7" stroke-width="0.5" opacity="0.3"/>
+  <text x="455" y="730" fill="#c8e6c9" font-size="11">• input sanitization</text>
+  <text x="455" y="747" fill="#c8e6c9" font-size="11">• required-field checks</text>
+  <text x="455" y="764" fill="#c8e6c9" font-size="11">• error message generation</text>
 
-  <rect x="780" y="710" width="320" height="135" rx="8" fill="rgba(67,160,71,0.15)" stroke="#81c784" stroke-width="1" filter="url(#shadow)"/>
-  <text x="940" y="732" text-anchor="middle" fill="#c8e6c9" font-size="13" font-weight="700">passwordStrength.ts</text>
-  <text x="940" y="752" text-anchor="middle" fill="#a5d6a7" font-size="11" font-family="monospace">→ passwordStrength.test.ts</text>
-  <line x1="795" y1="760" x2="1085" y2="760" stroke="#a5d6a7" stroke-width="0.5" opacity="0.3"/>
-  <text x="805" y="780" fill="#c8e6c9" font-size="11">• score 0–4 calculation</text>
-  <text x="805" y="797" fill="#c8e6c9" font-size="11">• length + character classes</text>
-  <text x="805" y="814" fill="#c8e6c9" font-size="11">• common-pattern detection</text>
-  <text x="805" y="831" fill="#c8e6c9" font-size="11">• deterministic output</text>
+  <rect x="780" y="660" width="320" height="115" rx="8" fill="rgba(67,160,71,0.15)" stroke="#81c784" stroke-width="1" filter="url(#shadow)"/>
+  <text x="940" y="682" text-anchor="middle" fill="#c8e6c9" font-size="13" font-weight="700">passwordStrength.ts</text>
+  <text x="940" y="702" text-anchor="middle" fill="#a5d6a7" font-size="11" font-family="monospace">→ passwordStrength.test.ts</text>
+  <line x1="795" y1="710" x2="1085" y2="710" stroke="#a5d6a7" stroke-width="0.5" opacity="0.3"/>
+  <text x="805" y="730" fill="#c8e6c9" font-size="11">• score 0–4 calculation</text>
+  <text x="805" y="747" fill="#c8e6c9" font-size="11">• length + character classes</text>
+  <text x="805" y="764" fill="#c8e6c9" font-size="11">• common-pattern detection</text>
 
   <!-- ============================================ -->
   <!-- DEPENDENCY ARROWS BETWEEN LAYERS              -->
   <!-- ============================================ -->
 
   <!-- Arrow Layer 1 → Layer 2 (up) -->
-  <path d="M 600 670 L 600 650" stroke="#81c784" stroke-width="2" fill="none" marker-end="url(#arrowheadGreen)"/>
-  <text x="610" y="660" fill="#a5d6a7" font-size="10" font-family="monospace">imports validation</text>
+  <path d="M 600 620 L 600 600" stroke="#81c784" stroke-width="2" fill="none" marker-end="url(#arrowheadGreen)"/>
 
   <!-- Arrow Layer 2 → Layer 3 (up) -->
-  <path d="M 600 470 L 600 450" stroke="#64b5f6" stroke-width="2" fill="none" marker-end="url(#arrowheadLight)"/>
-  <text x="610" y="460" fill="#90caf9" font-size="10" font-family="monospace">dispatches API results</text>
+  <path d="M 600 420 L 600 400" stroke="#64b5f6" stroke-width="2" fill="none" marker-end="url(#arrowheadLight)"/>
 
   <!-- Arrow Layer 3 → Layer 4 (up) -->
-  <path d="M 600 280 L 600 260" stroke="#ce93d8" stroke-width="2" fill="none" marker-end="url(#arrowheadPurple)"/>
-  <text x="610" y="270" fill="#e1bee7" font-size="10" font-family="monospace">selects auth state</text>
-
-  <!-- ============================================ -->
-  <!-- SIDE LEGEND / TEST TYPES                      -->
-  <!-- ============================================ -->
-
-  <rect x="80" y="860" width="1040" height="30" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-  <text x="100" y="880" fill="#8899aa" font-size="11" font-weight="600">TEST TYPES:</text>
-  
-  <!-- Unit test indicator -->
-  <circle cx="220" cy="875" r="5" fill="#81c784"/>
-  <text x="230" y="879" fill="#a5d6a7" font-size="10">Pure Unit Tests</text>
-
-  <circle cx="360" cy="875" r="5" fill="#64b5f6"/>
-  <text x="370" y="879" fill="#90caf9" font-size="10">API Integration Tests (mock fetch)</text>
-
-  <circle cx="570" cy="875" r="5" fill="#ce93d8"/>
-  <text x="580" y="879" fill="#e1bee7" font-size="10">Redux State Tests</text>
-
-  <circle cx="750" cy="875" r="5" fill="#ef9a9a"/>
-  <text x="760" y="879" fill="#ffcdd2" font-size="10">Component Tests (RTL)</text>
-
-  <text x="920" y="879" fill="#8899aa" font-size="10" font-family="monospace">Jest · RTL · Redux Mock Store</text>
+  <path d="M 600 230 L 600 210" stroke="#ce93d8" stroke-width="2" fill="none" marker-end="url(#arrowheadPurple)"/>
 
   <!-- Decorative line -->
-  <line x1="50" y1="85" x2="1150" y2="85" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <line x1="50" y1="35" x2="1150" y2="35" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
 </svg>
