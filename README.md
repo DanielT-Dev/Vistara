@@ -24,19 +24,17 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
   <br/>
   <img 
     src="./frontend/public/landing2.png" 
-    style="marginTop: 50px; marginBottom: 30px;"
+    style="marginTop: 50px;"
   />
   <br/>
   <br/>
   <img 
     src="./frontend/public/mobile-gallery1.png" 
     width="35%" 
-    height="500px"
   />
   <img 
     src="./frontend/public/mobile-nav1.png" 
     width="35%" 
-    height="500px"
   />
   <br/>
   <br/>
