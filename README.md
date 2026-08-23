@@ -222,14 +222,14 @@ The token is returned to the frontend and stored locally. It is later used to id
 
 <div style="display: felx; flexDirection: row;">
     <img 
-      src="./frontend/public/login-ok1.png" 
-      width="35%" 
-      height="350px"
+      src="./frontend/public/login-bad1.png" 
+      width="40%" 
+      height="400px"
     />
     <img 
-      src="./frontend/public/login-bad1.png" 
-      width="35%" 
-      height="350px"
+      src="./frontend/public/login-ok1.png" 
+      width="40%" 
+      height="400px"
     />
   </div>
 
