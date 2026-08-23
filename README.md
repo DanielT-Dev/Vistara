@@ -1,4 +1,4 @@
-# Paintings Project
+# 🎨 Vistara
 
 This app is a digital gallery for browsing a collection of paintings online. It works on phones, tablets, and computers, with a clean layout that makes viewing artwork simple and pleasant.
 
@@ -190,7 +190,7 @@ const getPaintingById = async (req, res) => {
 };
 ```
 
-![demo-testing1](./frontend/public/demo-testing1.gif)
+![demo-testing1](./frontend/public/demo-logger1.gif)
 
 ## Architecture Summary
 
