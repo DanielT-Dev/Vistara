@@ -415,4 +415,4 @@ it("detects a strong password", () => {
 
 ## Testing Architecture
 
-![testing1](https://github.com/DanielT-Dev/Paintings-Project/blob/main/paintings-project/public/image1.png)
+![testing1](https://raw.githubusercontent.com/DanielT-Dev/Vistara/09fd47165f88d8b0e874a20683c68f7f48817847/paintings-project/public/testing1.svg)
