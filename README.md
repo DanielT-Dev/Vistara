@@ -19,6 +19,9 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
 | **Logging** | ![Winston](https://img.shields.io/badge/Winston-6C2BD9?style=for-the-badge&logo=winston&logoColor=white) |
 
 
+  <br/>
+  <br/>
+  <br/>
   <img 
     src="./frontend/public/landing2.png" 
     style="marginTop: 50px; marginBottom: 30px;"
