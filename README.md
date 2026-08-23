@@ -19,15 +19,19 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
 | **Logging** | ![Winston](https://img.shields.io/badge/Winston-6C2BD9?style=for-the-badge&logo=winston&logoColor=white) |
 
 
-![image1](./frontend/public/landing2.png)
+  <img 
+    src="./frontend/public/landing2.png" 
+    width="70%"
+  />
   <img 
     src="./frontend/public/mobile-gallery1.png" 
-    width="47%" 
-    height="430"
-  /><img 
+    width="37%" 
+    height="530"
+  />
+  <img 
     src="./frontend/public/mobile-nav1.png" 
-    width="47%" 
-    height="430"
+    width="37%" 
+    height="530"
   />
 
 ## Database Connection (MongoDB + Mongoose)
