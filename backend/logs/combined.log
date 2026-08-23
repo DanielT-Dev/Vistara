@@ -1504,3 +1504,96 @@ CastError: Cast to [ObjectId] failed for value "[\n' +
 [2026-07-25 17:33:02] INFO: Fetching paintings {}
 [2026-07-25 17:33:02] INFO: Paintings fetched successfully {"count":24}
 [2026-07-25 17:33:02] INFO: GET /api/paintings? [36m304[39m 105ms {"meta":{}}
+[2026-08-23 20:43:12] INFO: Connected to MongoDB
+[2026-08-23 20:43:12] INFO: Server running on http://localhost:5000
+[2026-08-23 20:43:16] INFO: User login attempt {"email":"andrei@email.com"}
+[2026-08-23 20:43:16] INFO: Login successful {"userId":"6a650c055afae380e1c0bbfb"}
+[2026-08-23 20:43:16] INFO: POST /api/users/login [32m200[39m 165ms {"meta":{}}
+[2026-08-23 20:43:17] INFO: Fetching paintings {}
+[2026-08-23 20:43:17] INFO: Fetching all categories
+[2026-08-23 20:43:17] INFO: Categories fetched successfully {"count":7}
+[2026-08-23 20:43:17] INFO: GET /api/categories [32m200[39m 49ms {"meta":{}}
+[2026-08-23 20:43:17] INFO: Fetching all categories
+[2026-08-23 20:43:18] INFO: Categories fetched successfully {"count":7}
+[2026-08-23 20:43:18] INFO: GET /api/categories [36m304[39m 30ms {"meta":{}}
+[2026-08-23 20:43:18] INFO: Paintings fetched successfully {"count":24}
+[2026-08-23 20:43:18] INFO: GET /api/paintings? [32m200[39m 129ms {"meta":{}}
+[2026-08-23 20:43:18] INFO: Fetching paintings {}
+[2026-08-23 20:43:18] INFO: Paintings fetched successfully {"count":24}
+[2026-08-23 20:43:18] INFO: GET /api/paintings? [36m304[39m 85ms {"meta":{}}
+[2026-08-23 20:44:55] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c0948"}
+[2026-08-23 20:44:55] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c0948","title":"The Death of Socrates","relatedCount":8}
+[2026-08-23 20:44:55] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c0948 [32m200[39m 144ms {"meta":{}}
+[2026-08-23 20:44:55] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c0948"}
+[2026-08-23 20:44:55] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c0948","title":"The Death of Socrates","relatedCount":8}
+[2026-08-23 20:44:55] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c0948 [36m304[39m 73ms {"meta":{}}
+[2026-08-23 20:44:58] INFO: Fetching all categories
+[2026-08-23 20:44:58] INFO: Fetching paintings {}
+[2026-08-23 20:44:58] INFO: Categories fetched successfully {"count":7}
+[2026-08-23 20:44:58] INFO: GET /api/categories [36m304[39m 33ms {"meta":{}}
+[2026-08-23 20:44:58] INFO: Fetching all categories
+[2026-08-23 20:44:58] INFO: Categories fetched successfully {"count":7}
+[2026-08-23 20:44:58] INFO: GET /api/categories [36m304[39m 43ms {"meta":{}}
+[2026-08-23 20:44:58] INFO: Paintings fetched successfully {"count":24}
+[2026-08-23 20:44:58] INFO: GET /api/paintings? [36m304[39m 124ms {"meta":{}}
+[2026-08-23 20:44:58] INFO: Fetching paintings {}
+[2026-08-23 20:44:58] INFO: Paintings fetched successfully {"count":24}
+[2026-08-23 20:44:58] INFO: GET /api/paintings? [36m304[39m 104ms {"meta":{}}
+[2026-08-23 20:44:59] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c094e"}
+[2026-08-23 20:44:59] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c094e","title":"The Knight in the Enchanted Garden","relatedCount":3}
+[2026-08-23 20:44:59] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c094e [32m200[39m 74ms {"meta":{}}
+[2026-08-23 20:44:59] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c094e"}
+[2026-08-23 20:44:59] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c094e","title":"The Knight in the Enchanted Garden","relatedCount":3}
+[2026-08-23 20:44:59] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c094e [36m304[39m 66ms {"meta":{}}
+[2026-08-23 20:45:02] INFO: Fetching all categories
+[2026-08-23 20:45:02] INFO: Fetching paintings {}
+[2026-08-23 20:45:02] INFO: Categories fetched successfully {"count":7}
+[2026-08-23 20:45:02] INFO: GET /api/categories [36m304[39m 30ms {"meta":{}}
+[2026-08-23 20:45:02] INFO: Fetching all categories
+[2026-08-23 20:45:02] INFO: Categories fetched successfully {"count":7}
+[2026-08-23 20:45:02] INFO: GET /api/categories [36m304[39m 29ms {"meta":{}}
+[2026-08-23 20:45:02] INFO: Paintings fetched successfully {"count":24}
+[2026-08-23 20:45:02] INFO: GET /api/paintings? [36m304[39m 88ms {"meta":{}}
+[2026-08-23 20:45:02] INFO: Fetching paintings {}
+[2026-08-23 20:45:02] INFO: Paintings fetched successfully {"count":24}
+[2026-08-23 20:45:02] INFO: GET /api/paintings? [36m304[39m 71ms {"meta":{}}
+[2026-08-23 20:45:03] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c0954"}
+[2026-08-23 20:45:03] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c0954","title":"Liberty Leading the People","relatedCount":6}
+[2026-08-23 20:45:03] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c0954 [32m200[39m 76ms {"meta":{}}
+[2026-08-23 20:45:03] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c0954"}
+[2026-08-23 20:45:03] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c0954","title":"Liberty Leading the People","relatedCount":6}
+[2026-08-23 20:45:03] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c0954 [36m304[39m 80ms {"meta":{}}
+[2026-08-23 20:45:04] INFO: Fetching all categories
+[2026-08-23 20:45:04] INFO: Fetching paintings {}
+[2026-08-23 20:45:04] INFO: Categories fetched successfully {"count":7}
+[2026-08-23 20:45:04] INFO: GET /api/categories [36m304[39m 31ms {"meta":{}}
+[2026-08-23 20:45:04] INFO: Fetching all categories
+[2026-08-23 20:45:04] INFO: Categories fetched successfully {"count":7}
+[2026-08-23 20:45:04] INFO: GET /api/categories [36m304[39m 29ms {"meta":{}}
+[2026-08-23 20:45:04] INFO: Paintings fetched successfully {"count":24}
+[2026-08-23 20:45:04] INFO: GET /api/paintings? [36m304[39m 109ms {"meta":{}}
+[2026-08-23 20:45:04] INFO: Fetching paintings {}
+[2026-08-23 20:45:04] INFO: Paintings fetched successfully {"count":24}
+[2026-08-23 20:45:04] INFO: GET /api/paintings? [36m304[39m 79ms {"meta":{}}
+[2026-08-23 20:45:15] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c0951"}
+[2026-08-23 20:45:15] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c0951","title":"The Coronation of Napoleon","relatedCount":4}
+[2026-08-23 20:45:15] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c0951 [32m200[39m 77ms {"meta":{}}
+[2026-08-23 20:45:15] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c0951"}
+[2026-08-23 20:45:15] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c0951","title":"The Coronation of Napoleon","relatedCount":4}
+[2026-08-23 20:45:15] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c0951 [36m304[39m 77ms {"meta":{}}
+[2026-08-23 20:45:19] INFO: Fetching all categories
+[2026-08-23 20:45:19] INFO: Fetching paintings {}
+[2026-08-23 20:45:19] INFO: Categories fetched successfully {"count":7}
+[2026-08-23 20:45:19] INFO: GET /api/categories [36m304[39m 31ms {"meta":{}}
+[2026-08-23 20:45:19] INFO: Fetching all categories
+[2026-08-23 20:45:19] INFO: Categories fetched successfully {"count":7}
+[2026-08-23 20:45:19] INFO: GET /api/categories [36m304[39m 36ms {"meta":{}}
+[2026-08-23 20:45:19] INFO: Paintings fetched successfully {"count":24}
+[2026-08-23 20:45:19] INFO: GET /api/paintings? [36m304[39m 95ms {"meta":{}}
+[2026-08-23 20:45:19] INFO: Fetching paintings {}
+[2026-08-23 20:45:19] INFO: Paintings fetched successfully {"count":24}
+[2026-08-23 20:45:19] INFO: GET /api/paintings? [36m304[39m 78ms {"meta":{}}
+[2026-08-23 20:53:14] INFO: Connected to MongoDB
+[2026-08-23 20:53:14] INFO: Server running on http://localhost:5000
+[2026-08-23 20:53:22] INFO: Connected to MongoDB
+[2026-08-23 20:53:22] INFO: Server running on http://localhost:5000

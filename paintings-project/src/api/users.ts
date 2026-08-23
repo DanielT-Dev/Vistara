@@ -51,7 +51,63 @@ export async function createUser(
 
     if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.message || "Failed to create user");
+
+        throw new Error(
+            data.message || "Failed to create user"
+        );
+    }
+
+    return res.json();
+}
+
+// -----------------------------------------------------------------------------
+// UPDATE USER
+// -----------------------------------------------------------------------------
+
+export async function updateUser(
+    id: string,
+    username?: string,
+    email?: string,
+    password?: string
+) {
+    const res = await fetch(`${API_URL}/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            ...(username !== undefined && { username }),
+            ...(email !== undefined && { email }),
+            ...(password !== undefined && { password }),
+        }),
+    });
+
+    if (!res.ok) {
+        const data = await res.json();
+
+        throw new Error(
+            data.message || "Failed to update user"
+        );
+    }
+
+    return res.json();
+}
+
+// -----------------------------------------------------------------------------
+// DELETE USER
+// -----------------------------------------------------------------------------
+
+export async function deleteUser(id: string) {
+    const res = await fetch(`${API_URL}/${id}`, {
+        method: "DELETE",
+    });
+
+    if (!res.ok) {
+        const data = await res.json();
+
+        throw new Error(
+            data.message || "Failed to delete user"
+        );
     }
 
     return res.json();
@@ -76,16 +132,13 @@ export async function loginUser(
         }),
     });
 
-
     const data = await res.json();
-
 
     if (!res.ok) {
         throw new Error(
             data.message || "Login failed"
         );
     }
-
 
     return data;
 }

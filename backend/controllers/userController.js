@@ -268,6 +268,78 @@ const loginUser = async (req, res) => {
     }
 };
 
+// UPDATE user
+const updateUser = async (req, res) => {
+    try {
+        const { username, email, password } = req.body;
+
+        const user = await User.findById(req.params.id);
+
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found",
+            });
+        }
+
+        if (username !== undefined) {
+            user.username = username;
+        }
+
+        if (email !== undefined) {
+            user.email = email;
+        }
+
+        if (password !== undefined) {
+            user.password = await bcrypt.hash(password, 10);
+        }
+
+        await user.save();
+
+        res.json({
+            id: user._id,
+            username: user.username,
+            email: user.email,
+        });
+    } catch (err) {
+        logger.error("Failed to update user", {
+            userId: req.params.id,
+            error: err,
+        });
+
+        res.status(500).json({
+            message: "Server error",
+        });
+    }
+};
+
+// DELETE user
+const deleteUser = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+
+        if (!user) {
+            return res.status(404).json({
+                message: "User not found",
+            });
+        }
+
+        await User.findByIdAndDelete(req.params.id);
+
+        res.json({
+            message: "User deleted successfully",
+        });
+    } catch (err) {
+        logger.error("Failed to delete user", {
+            userId: req.params.id,
+            error: err,
+        });
+
+        res.status(500).json({
+            message: "Server error",
+        });
+    }
+};
+
 
 
 module.exports = {
@@ -275,4 +347,6 @@ module.exports = {
     getUserById,
     createUser,
     loginUser,
+    updateUser,
+    deleteUser
 };
