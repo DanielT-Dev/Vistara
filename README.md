@@ -223,13 +223,13 @@ The token is returned to the frontend and stored locally. It is later used to id
 <div style="display: felx; flexDirection: row;">
     <img 
       src="./frontend/public/login-bad1.png" 
-      width="45%" 
-      height="450px"
+      width="47%" 
+      height="480px"
     />
     <img 
       src="./frontend/public/login-ok1.png" 
-      width="45%" 
-      height="450px"
+      width="47%" 
+      height="480px"
     />
   </div>
 
