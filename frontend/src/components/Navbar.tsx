@@ -105,7 +105,7 @@ export default function Navbar() {
                             opacity: 0.8,
                         }}
                     >
-                        Paintings
+                        Vistara
                     </Text>
 
 
@@ -271,7 +271,7 @@ export default function Navbar() {
                     <DrawerHeader
                         borderBottomWidth="1px"
                     >
-                        Paintings
+                        Vistara
                     </DrawerHeader>
 
 

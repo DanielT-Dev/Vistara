@@ -18,6 +18,18 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
 | **Testing** | ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white) ![React Testing Library](https://img.shields.io/badge/React_Testing_Library-E33332?style=for-the-badge&logo=testing-library&logoColor=white) |
 | **Logging** | ![Winston](https://img.shields.io/badge/Winston-6C2BD9?style=for-the-badge&logo=winston&logoColor=white) |
 
+
+![image1](./frontend/public/landing2.png)
+  <img 
+    src="./frontend/public/mobile-gallery1.png" 
+    width="47%" 
+    height="430"
+  /><img 
+    src="./frontend/public/mobile-nav1.png" 
+    width="47%" 
+    height="430"
+  />
+
 ## Database Connection (MongoDB + Mongoose)
 
 We connect to MongoDB using Mongoose and environment variables for configuration:

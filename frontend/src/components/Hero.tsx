@@ -22,7 +22,7 @@ export default function Hero() {
             zIndex={2}
             pt="150px"
             pb="90px"
-            minH="70vh"
+            minH="60vh"
             textAlign="center"
         >
             <Box
