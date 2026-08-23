@@ -190,7 +190,7 @@ const getPaintingById = async (req, res) => {
 };
 ```
 
----
+![demo-testing1](./frontend/public/demo-testing1.gif)
 
 ## Architecture Summary
 

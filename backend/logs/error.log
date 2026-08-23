@@ -83,3 +83,4 @@ CastError: Cast to [ObjectId] failed for value "[\n' +
 [2026-07-14 23:34:34] ERROR: Login failed {"error":{}}
 [2026-07-14 23:34:36] ERROR: Login failed {"error":{}}
 [2026-07-14 23:35:42] ERROR: Login failed {"error":{}}
+[2026-08-23 22:24:45] ERROR: Failed to fetch painting {"paintingId":"painting1.jpg","error":{"stringValue":"\"painting1.jpg\"","valueType":"string","kind":"ObjectId","value":"painting1.jpg","path":"_id","reason":{},"name":"CastError","message":"Cast to ObjectId failed for value \"painting1.jpg\" (type string) at path \"_id\" for model \"Painting\""}}

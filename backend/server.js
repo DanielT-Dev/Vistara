@@ -28,7 +28,7 @@ app.use(requestLogger);
 app.use(
   "/paintings",
   express.static(
-    path.join(__dirname, "../paintings-project/public/paintings")
+    path.join(__dirname, "../frontend/public/paintings")
   )
 );
 
