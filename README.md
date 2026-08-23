@@ -24,8 +24,8 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
   <br/>
   <img 
     src="./frontend/public/landing2.png" 
-    width="90%"
-    style="marginTop: 30px;"
+    width="100%"
+    style="marginTop: 20px;"
   />
   <br/>
   <br/>
