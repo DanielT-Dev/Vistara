@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ForceGraph2D from "react-force-graph-2d";
-import { getGraph } from "../api/graph";
+import { getGraph } from "../api/graphApi";
 import {
   Box,
   Text,

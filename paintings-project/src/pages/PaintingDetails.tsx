@@ -11,7 +11,7 @@ import {
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { getPaintingById } from "../api/paintings";
+import { getPaintingById } from "../api/paintingApi";
 
 const MotionBox = motion.create(Box);
 

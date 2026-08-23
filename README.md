@@ -15,6 +15,7 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
 | **Backend** | ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white) ![Nodemon](https://img.shields.io/badge/Nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=white) |
 | **Database** | ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) |
 | **Security** | ![Bcrypt](https://img.shields.io/badge/Bcrypt-003A70?style=for-the-badge&logo=letsencrypt&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white) |
+| **Testing** | ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white) ![React Testing Library](https://img.shields.io/badge/React_Testing_Library-E33332?style=for-the-badge&logo=testing-library&logoColor=white) |
 | **Logging** | ![Winston](https://img.shields.io/badge/Winston-6C2BD9?style=for-the-badge&logo=winston&logoColor=white) |
 
 ## Database Connection (MongoDB + Mongoose)
@@ -364,3 +365,54 @@ function ProtectedRoute({ children }) {
   return children;
 }
 ```
+
+## Testing
+
+The authentication system is tested with **Jest** across three main areas: user API operations, Redux authentication state, and authentication utilities. The API tests cover CRUD operations and login, while Redux tests verify authentication state and `localStorage` behavior. Validation tests cover email, password, and password-strength rules.
+
+```js
+it("authenticates the user", () => {
+    const state = reducer(
+        initialState,
+        login({
+            user: testUser,
+            token: "test-token",
+        })
+    );
+
+    expect(state.isAuthenticated).toBe(true);
+    expect(state.token).toBe("test-token");
+});
+```
+
+The Redux authentication slice is tested separately to verify that login correctly updates the authenticated user, token, and initialization state. It also ensures that authentication data is persisted to localStorage as expected.
+
+```js
+const state = reducer(
+    initialState,
+    login({
+        user: testUser,
+        token: "test-token",
+    })
+);
+
+expect(state.isAuthenticated).toBe(true);
+expect(state.token).toBe("test-token");
+expect(localStorage.getItem("token")).toBe("test-token");
+```
+
+Validation and password-strength utilities are tested as pure functions, allowing individual authentication rules to be verified without involving React or the backend. This provides a reliable foundation for future React Testing Library tests of complete login and registration flows.
+
+```js
+it("detects a strong password", () => {
+    const result = evaluatePassword("Password1!");
+
+    expect(result.score).toBe(5);
+    expect(result.label).toBe("Strong");
+    expect(result.isStrong).toBe(true);
+});
+```
+
+## Testing Architecture
+
+![testing1](https://github.com/DanielT-Dev/Paintings-Project/blob/main/paintings-project/public/image1.png)
