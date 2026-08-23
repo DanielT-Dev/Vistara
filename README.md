@@ -95,7 +95,7 @@ This structure allows:
 
 ---
 
-![image1](https://github.com/DanielT-Dev/Paintings-Project/blob/main/paintings-project/public/image1.png)
+![image1](./frontend/public/image1.png)
 
 ## API Layer (Controllers)
 
@@ -189,6 +189,8 @@ const getPaintingById = async (req, res) => {
   }
 };
 ```
+
+Logger demo:
 
 ![demo-testing1](./frontend/public/demo-logger1.gif)
 
@@ -313,11 +315,11 @@ const authSlice = createSlice({
 ## Validation
 
   <img 
-    src="https://raw.githubusercontent.com/DanielT-Dev/Paintings-Project/main/paintings-project/public/auth1.png" 
+    src="./frontend/public/auth1.png" 
     width="47%" 
     height="430"
   /><img 
-    src="https://raw.githubusercontent.com/DanielT-Dev/Paintings-Project/main/paintings-project/public/auth2.png" 
+    src="./frontend/public/auth2.png" 
     width="47%" 
     height="430"
   />
@@ -411,4 +413,4 @@ it("detects a strong password", () => {
 
 ## Testing Architecture
 
-![testing1](https://raw.githubusercontent.com/DanielT-Dev/Vistara/09fd47165f88d8b0e874a20683c68f7f48817847/paintings-project/public/testing1.svg)
+![testing1](./frontend/public/testing1.svg)
