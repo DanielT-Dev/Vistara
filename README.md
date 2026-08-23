@@ -21,7 +21,8 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
 
   <img 
     src="./frontend/public/landing2.png" 
-    width="70%"
+    width="80%"
+    style="marginBottom: 30px;"
   />
   <br/>
   <br/>
@@ -30,6 +31,7 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
     src="./frontend/public/mobile-gallery1.png" 
     width="30%" 
     height="600px"
+    style="marginRight: 20%;"
   />
   <img 
     src="./frontend/public/mobile-nav1.png" 
