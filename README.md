@@ -19,95 +19,29 @@ The collection is stored securely in the cloud, so you can access it anytime. Th
 | **Logging** | ![Winston](https://img.shields.io/badge/Winston-6C2BD9?style=for-the-badge&logo=winston&logoColor=white) |
 
 
-![image1](./frontend/public/landing2.png)
+  <br/>
+  <br/>
+  <br/>
   <img 
-    src="./frontend/public/mobile-gallery1.png" 
-    width="47%" 
-    height="430"
-  /><img 
-    src="./frontend/public/mobile-nav1.png" 
-    width="47%" 
-    height="430"
+    src="./frontend/public/landing2.png" 
+    width="100%"
+    style="marginTop: 20px;"
   />
+  <br/>
+  <br/>
+  <div style="display: felx; flexDirection: row;">
+    <img 
+      src="./frontend/public/mobile-gallery1.png" 
+      width="39%" 
+    />
+    <img 
+      src="./frontend/public/mobile-nav1.png" 
+      width="39%" 
+    />
+  </div>
+  <br/>
+  <br/>
 
-## Database Connection (MongoDB + Mongoose)
-
-We connect to MongoDB using Mongoose and environment variables for configuration:
-
-```js
-const mongoose = require("mongoose");
-require("dotenv").config();
-
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
-
-    console.log(`MongoDB connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error("MongoDB connection error:", error.message);
-    process.exit(1);
-  }
-};
-
-module.exports = connectDB;
-```
-
-This ensures:
-- Secure connection using .env
-- Proper error handling on startup
-- Clean server shutdown if DB connection fails
-
----
-
-## Data Modeling (Mongoose Schema)
-
-Paintings are stored using a structured schema that includes metadata and relationships to other paintings.
-
-```js
-const mongoose = require("mongoose");
-
-const relatedPaintingSchema = new mongoose.Schema(
-  {
-    id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Painting",
-      required: true,
-    },
-    score: {
-      type: Number,
-      default: 0,
-    },
-  },
-  { _id: false }
-);
-
-const paintingSchema = new mongoose.Schema(
-  {
-    title: String,
-    artist: String,
-    year: Number,
-    medium: String,
-    description: String,
-    imageUrls: [String],
-    tags: [String],
-
-    relatedPaintings: [relatedPaintingSchema],
-  },
-  { timestamps: true }
-);
-
-module.exports = mongoose.model("Painting", paintingSchema);
-```
-
-This structure allows:
-- Storing multiple images per painting
-- Tag-based categorization
-- Linking related paintings with a similarity score
-- Efficient referencing using ObjectId + population
-
----
-
-![image1](./frontend/public/image1.png)
 
 ## API Layer (Controllers)
 
@@ -206,14 +140,6 @@ Logger demo:
 
 ![demo-testing1](./frontend/public/demo-logger1.gif)
 
-## Architecture Summary
-
-- MongoDB stores painting data
-- Mongoose defines structured schemas and relationships
-- Controllers handle API logic
-- populate() is used to resolve relationships
-- Data is flattened before sending to the frontend for simplicity
-
 # Authentication System
 
 Users can create accounts and securely log in. Passwords are never stored directly in the database. Instead, they are encrypted using **bcrypt hashing** before being saved.
@@ -294,36 +220,6 @@ const token = jwt.sign(
 ```
 The token is returned to the frontend and stored locally. It is later used to identify the authenticated user.
 
-## State Management with Redux
-
-Redux Toolkit was used to manage authentication state globally across the application. An `authSlice` stores the current user, authentication token, and authentication status, allowing different components such as the Navbar and protected routes to access authentication information consistently.
-
-The authentication state is persisted using `localStorage`, allowing the application to restore the user session after a page refresh. Separate actions are used for logging in, restoring an existing session, and logging out.
-
-```js
-const authSlice = createSlice({
-  name: "auth",
-  initialState: {
-    user: null,
-    token: null,
-    isAuthenticated: false,
-  },
-  reducers: {
-    login(state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-      state.isAuthenticated = true;
-    },
-
-    logout(state) {
-      state.user = null;
-      state.token = null;
-      state.isAuthenticated = false;
-    },
-  },
-});
-```
-
 ## Validation
 
   <img 
@@ -373,6 +269,38 @@ function ProtectedRoute({ children }) {
   return children;
 }
 ```
+
+
+## State Management with Redux
+
+Redux Toolkit was used to manage authentication state globally across the application. An `authSlice` stores the current user, authentication token, and authentication status, allowing different components such as the Navbar and protected routes to access authentication information consistently.
+
+The authentication state is persisted using `localStorage`, allowing the application to restore the user session after a page refresh. Separate actions are used for logging in, restoring an existing session, and logging out.
+
+```js
+const authSlice = createSlice({
+  name: "auth",
+  initialState: {
+    user: null,
+    token: null,
+    isAuthenticated: false,
+  },
+  reducers: {
+    login(state, action) {
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+      state.isAuthenticated = true;
+    },
+
+    logout(state) {
+      state.user = null;
+      state.token = null;
+      state.isAuthenticated = false;
+    },
+  },
+});
+```
+
 
 ## Testing
 
@@ -426,3 +354,83 @@ it("detects a strong password", () => {
 ## Testing Architecture
 
 ![testing1](./frontend/public/testing1.svg)
+
+
+## Database Connection (MongoDB + Mongoose)
+
+We connect to MongoDB using Mongoose and environment variables for configuration:
+
+```js
+const mongoose = require("mongoose");
+require("dotenv").config();
+
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+
+    console.log(`MongoDB connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.error("MongoDB connection error:", error.message);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
+```
+
+This ensures:
+- Secure connection using .env
+- Proper error handling on startup
+- Clean server shutdown if DB connection fails
+
+---
+
+## Data Modeling (Mongoose Schema)
+
+Paintings are stored using a structured schema that includes metadata and relationships to other paintings.
+
+```js
+const mongoose = require("mongoose");
+
+const relatedPaintingSchema = new mongoose.Schema(
+  {
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Painting",
+      required: true,
+    },
+    score: {
+      type: Number,
+      default: 0,
+    },
+  },
+  { _id: false }
+);
+
+const paintingSchema = new mongoose.Schema(
+  {
+    title: String,
+    artist: String,
+    year: Number,
+    medium: String,
+    description: String,
+    imageUrls: [String],
+    tags: [String],
+
+    relatedPaintings: [relatedPaintingSchema],
+  },
+  { timestamps: true }
+);
+
+module.exports = mongoose.model("Painting", paintingSchema);
+```
+
+This structure allows:
+- Storing multiple images per painting
+- Tag-based categorization
+- Linking related paintings with a similarity score
+- Efficient referencing using ObjectId + population
+
+---
+
+![image1](./frontend/public/image1.png)
