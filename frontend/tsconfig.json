@@ -12,6 +12,7 @@
     "types": [
       "jest",
       "@testing-library/jest-dom"
-    ]
+    ],
+     "esModuleInterop": true
   }
 }

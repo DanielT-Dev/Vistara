@@ -192,12 +192,6 @@ const getPaintingById = async (req, res) => {
 
 ---
 
-<img 
-  src="https://raw.githubusercontent.com/DanielT-Dev/Paintings-Project/main/paintings-project/public/image2.png" 
-  width="800" 
-  height="500"
-/>
-
 ## Architecture Summary
 
 - MongoDB stores painting data
@@ -367,6 +361,8 @@ function ProtectedRoute({ children }) {
 ```
 
 ## Testing
+
+![demo-testing1](./frontend/public/demo-testing1.gif)
 
 The authentication system is tested with **Jest** across three main areas: user API operations, Redux authentication state, and authentication utilities. The API tests cover CRUD operations and login, while Redux tests verify authentication state and `localStorage` behavior. Validation tests cover email, password, and password-strength rules.
 
