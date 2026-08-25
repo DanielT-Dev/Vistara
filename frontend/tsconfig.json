@@ -11,8 +11,10 @@
   "compilerOptions": {
     "types": [
       "jest",
+      "node",
       "@testing-library/jest-dom"
     ],
-     "esModuleInterop": true
+    "jsx": "react-jsx",
+    "esModuleInterop": true
   }
 }
