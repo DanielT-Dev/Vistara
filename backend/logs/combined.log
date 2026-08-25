@@ -1887,3 +1887,431 @@ CastError: Cast to [ObjectId] failed for value "[\n' +
 [2026-08-23 22:34:42] INFO: Fetching paintings {}
 [2026-08-23 22:34:42] INFO: Paintings fetched successfully {"count":24}
 [2026-08-23 22:34:42] INFO: GET /api/paintings? [36m304[39m 85ms {"meta":{}}
+[2026-08-23 23:25:12] INFO: Connected to MongoDB
+[2026-08-23 23:25:12] INFO: Server running on http://localhost:5000
+[2026-08-23 23:31:36] INFO: User login attempt {"email":"andrei@email.com"}
+[2026-08-23 23:31:36] INFO: Login successful {"userId":"6a650c055afae380e1c0bbfb"}
+[2026-08-23 23:31:36] INFO: POST /api/users/login [32m200[39m 137ms {"meta":{}}
+[2026-08-23 23:31:38] INFO: Fetching all categories
+[2026-08-23 23:31:38] INFO: Fetching paintings {}
+[2026-08-23 23:31:38] INFO: Categories fetched successfully {"count":7}
+[2026-08-23 23:31:38] INFO: GET /api/categories [36m304[39m 36ms {"meta":{}}
+[2026-08-23 23:31:38] INFO: Fetching all categories
+[2026-08-23 23:31:38] INFO: Categories fetched successfully {"count":7}
+[2026-08-23 23:31:38] INFO: GET /api/categories [36m304[39m 38ms {"meta":{}}
+[2026-08-23 23:31:38] INFO: Paintings fetched successfully {"count":24}
+[2026-08-23 23:31:38] INFO: GET /api/paintings? [36m304[39m 113ms {"meta":{}}
+[2026-08-23 23:31:38] INFO: Fetching paintings {}
+[2026-08-23 23:31:38] INFO: Paintings fetched successfully {"count":24}
+[2026-08-23 23:31:38] INFO: GET /api/paintings? [36m304[39m 88ms {"meta":{}}
+[2026-08-24 00:03:33] INFO: User login attempt {"email":"andrei@email.com"}
+[2026-08-24 00:03:33] INFO: Login successful {"userId":"6a650c055afae380e1c0bbfb"}
+[2026-08-24 00:03:33] INFO: POST /api/users/login [32m200[39m 113ms {"meta":{}}
+[2026-08-24 00:03:34] INFO: Fetching all categories
+[2026-08-24 00:03:34] INFO: Fetching paintings {}
+[2026-08-24 00:03:34] INFO: Categories fetched successfully {"count":7}
+[2026-08-24 00:03:34] INFO: GET /api/categories [36m304[39m 28ms {"meta":{}}
+[2026-08-24 00:03:34] INFO: Fetching all categories
+[2026-08-24 00:03:34] INFO: Categories fetched successfully {"count":7}
+[2026-08-24 00:03:34] INFO: GET /api/categories [36m304[39m 29ms {"meta":{}}
+[2026-08-24 00:03:34] INFO: Paintings fetched successfully {"count":24}
+[2026-08-24 00:03:34] INFO: GET /api/paintings? [36m304[39m 132ms {"meta":{}}
+[2026-08-24 00:03:34] INFO: Fetching paintings {}
+[2026-08-24 00:03:34] INFO: Paintings fetched successfully {"count":24}
+[2026-08-24 00:03:34] INFO: GET /api/paintings? [36m304[39m 110ms {"meta":{}}
+[2026-08-24 00:03:46] INFO: User login attempt {"email":"andrei@email.com"}
+[2026-08-24 00:03:46] INFO: Login successful {"userId":"6a650c055afae380e1c0bbfb"}
+[2026-08-24 00:03:46] INFO: POST /api/users/login [32m200[39m 140ms {"meta":{}}
+[2026-08-24 00:03:48] INFO: Fetching all categories
+[2026-08-24 00:03:48] INFO: Fetching paintings {}
+[2026-08-24 00:03:48] INFO: Categories fetched successfully {"count":7}
+[2026-08-24 00:03:48] INFO: GET /api/categories [36m304[39m 30ms {"meta":{}}
+[2026-08-24 00:03:48] INFO: Fetching all categories
+[2026-08-24 00:03:48] INFO: Categories fetched successfully {"count":7}
+[2026-08-24 00:03:48] INFO: GET /api/categories [36m304[39m 30ms {"meta":{}}
+[2026-08-24 00:03:48] INFO: Paintings fetched successfully {"count":24}
+[2026-08-24 00:03:48] INFO: GET /api/paintings? [36m304[39m 81ms {"meta":{}}
+[2026-08-24 00:03:48] INFO: Fetching paintings {}
+[2026-08-24 00:03:48] INFO: Paintings fetched successfully {"count":24}
+[2026-08-24 00:03:48] INFO: GET /api/paintings? [36m304[39m 54ms {"meta":{}}
+[2026-08-24 00:04:23] INFO: User login attempt {"email":"daniel@email.com"}
+[2026-08-24 00:04:23] INFO: Login successful {"userId":"6a569e7ac1a855b377fa02b9"}
+[2026-08-24 00:04:23] INFO: POST /api/users/login [32m200[39m 122ms {"meta":{}}
+[2026-08-24 00:04:24] INFO: Fetching paintings {}
+[2026-08-24 00:04:24] INFO: Fetching all categories
+[2026-08-24 00:04:24] INFO: Categories fetched successfully {"count":7}
+[2026-08-24 00:04:24] INFO: GET /api/categories [36m304[39m 29ms {"meta":{}}
+[2026-08-24 00:04:24] INFO: Fetching all categories
+[2026-08-24 00:04:24] INFO: Categories fetched successfully {"count":7}
+[2026-08-24 00:04:24] INFO: GET /api/categories [36m304[39m 36ms {"meta":{}}
+[2026-08-24 00:04:24] INFO: Paintings fetched successfully {"count":24}
+[2026-08-24 00:04:24] INFO: GET /api/paintings? [36m304[39m 81ms {"meta":{}}
+[2026-08-24 00:04:24] INFO: Fetching paintings {}
+[2026-08-24 00:04:24] INFO: Paintings fetched successfully {"count":24}
+[2026-08-24 00:04:24] INFO: GET /api/paintings? [36m304[39m 54ms {"meta":{}}
+[2026-08-24 00:05:25] INFO: User login attempt {"email":"daniel@email.com1"}
+[2026-08-24 00:05:25] WARN: Login failed - user not found {"email":"daniel@email.com1"}
+[2026-08-24 00:05:25] INFO: POST /api/users/login [33m401[39m 46ms {"meta":{}}
+[2026-08-24 00:05:38] INFO: User login attempt {"email":"wrong_user@email.com"}
+[2026-08-24 00:05:38] WARN: Login failed - user not found {"email":"wrong_user@email.com"}
+[2026-08-24 00:05:38] INFO: POST /api/users/login [33m401[39m 27ms {"meta":{}}
+[2026-08-24 01:24:32] INFO: Connected to MongoDB
+[2026-08-24 01:24:32] INFO: Server running on http://localhost:5000
+[2026-08-25 17:28:53] INFO: Connected to MongoDB
+[2026-08-25 17:28:53] INFO: Server running on http://localhost:5000
+[2026-08-25 17:28:53] INFO: User login attempt {"email":"daniel@email.com"}
+[2026-08-25 17:28:53] INFO: Login successful {"userId":"6a569e7ac1a855b377fa02b9"}
+[2026-08-25 17:28:53] INFO: POST /api/users/login [32m200[39m 110ms {"meta":{}}
+[2026-08-25 17:28:56] INFO: Fetching paintings {}
+[2026-08-25 17:28:56] INFO: Fetching all categories
+[2026-08-25 17:28:56] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 17:28:57] INFO: GET /api/categories [36m304[39m 91ms {"meta":{}}
+[2026-08-25 17:28:57] INFO: Fetching all categories
+[2026-08-25 17:28:57] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 17:28:57] INFO: GET /api/categories [36m304[39m 38ms {"meta":{}}
+[2026-08-25 17:28:57] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 17:28:57] INFO: GET /api/paintings? [32m200[39m 227ms {"meta":{}}
+[2026-08-25 17:28:57] INFO: Fetching paintings {}
+[2026-08-25 17:28:57] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 17:28:57] INFO: GET /api/paintings? [36m304[39m 121ms {"meta":{}}
+[2026-08-25 17:29:40] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c094a"}
+[2026-08-25 17:29:40] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c094a","title":"Water from the Rock","relatedCount":3}
+[2026-08-25 17:29:40] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c094a [32m200[39m 99ms {"meta":{}}
+[2026-08-25 17:29:40] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c094a"}
+[2026-08-25 17:29:40] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c094a","title":"Water from the Rock","relatedCount":3}
+[2026-08-25 17:29:40] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c094a [36m304[39m 86ms {"meta":{}}
+[2026-08-25 17:29:46] INFO: Fetching all categories
+[2026-08-25 17:29:46] INFO: Fetching paintings {}
+[2026-08-25 17:29:46] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 17:29:46] INFO: GET /api/categories [36m304[39m 57ms {"meta":{}}
+[2026-08-25 17:29:46] INFO: Fetching all categories
+[2026-08-25 17:29:46] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 17:29:46] INFO: GET /api/categories [36m304[39m 43ms {"meta":{}}
+[2026-08-25 17:29:46] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 17:29:46] INFO: GET /api/paintings? [36m304[39m 127ms {"meta":{}}
+[2026-08-25 17:29:46] INFO: Fetching paintings {}
+[2026-08-25 17:29:47] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 17:29:47] INFO: GET /api/paintings? [36m304[39m 93ms {"meta":{}}
+[2026-08-25 17:29:48] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c0952"}
+[2026-08-25 17:29:48] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c0952","title":"The Death of Marat","relatedCount":6}
+[2026-08-25 17:29:48] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c0952 [32m200[39m 140ms {"meta":{}}
+[2026-08-25 17:29:48] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c0952"}
+[2026-08-25 17:29:48] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c0952","title":"The Death of Marat","relatedCount":6}
+[2026-08-25 17:29:48] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c0952 [36m304[39m 77ms {"meta":{}}
+[2026-08-25 17:29:52] INFO: Fetching all categories
+[2026-08-25 17:29:52] INFO: Fetching paintings {}
+[2026-08-25 17:29:52] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 17:29:52] INFO: GET /api/categories [36m304[39m 45ms {"meta":{}}
+[2026-08-25 17:29:52] INFO: Fetching all categories
+[2026-08-25 17:29:52] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 17:29:52] INFO: GET /api/categories [36m304[39m 40ms {"meta":{}}
+[2026-08-25 17:29:52] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 17:29:52] INFO: GET /api/paintings? [36m304[39m 122ms {"meta":{}}
+[2026-08-25 17:29:52] INFO: Fetching paintings {}
+[2026-08-25 17:29:52] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 17:29:52] INFO: GET /api/paintings? [36m304[39m 119ms {"meta":{}}
+[2026-08-25 17:33:25] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c094a"}
+[2026-08-25 17:33:25] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c094a","title":"Water from the Rock","relatedCount":3}
+[2026-08-25 17:33:25] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c094a [36m304[39m 87ms {"meta":{}}
+[2026-08-25 17:33:25] INFO: Fetching painting {"paintingId":"6a47ad925aa0fc40bd8c094a"}
+[2026-08-25 17:33:25] INFO: Painting fetched successfully {"paintingId":"6a47ad925aa0fc40bd8c094a","title":"Water from the Rock","relatedCount":3}
+[2026-08-25 17:33:25] INFO: GET /api/paintings/6a47ad925aa0fc40bd8c094a [36m304[39m 85ms {"meta":{}}
+[2026-08-25 17:33:35] INFO: Fetching all categories
+[2026-08-25 17:33:35] INFO: Fetching paintings {}
+[2026-08-25 17:33:35] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 17:33:35] INFO: GET /api/categories [36m304[39m 38ms {"meta":{}}
+[2026-08-25 17:33:35] INFO: Fetching all categories
+[2026-08-25 17:33:35] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 17:33:35] INFO: GET /api/categories [36m304[39m 58ms {"meta":{}}
+[2026-08-25 17:33:35] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 17:33:35] INFO: GET /api/paintings? [36m304[39m 147ms {"meta":{}}
+[2026-08-25 17:33:35] INFO: Fetching paintings {}
+[2026-08-25 17:33:36] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 17:33:36] INFO: GET /api/paintings? [36m304[39m 103ms {"meta":{}}
+[2026-08-25 17:35:42] INFO: Connected to MongoDB
+[2026-08-25 17:35:42] INFO: Server running on http://localhost:5000
+[2026-08-25 17:36:16] INFO: Connected to MongoDB
+[2026-08-25 17:36:16] INFO: Server running on http://localhost:5000
+[2026-08-25 17:36:22] INFO: Connected to MongoDB
+[2026-08-25 17:36:22] INFO: Server running on http://localhost:5000
+[2026-08-25 17:36:29] INFO: Connected to MongoDB
+[2026-08-25 17:36:29] INFO: Server running on http://localhost:5000
+[2026-08-25 17:37:51] INFO: Connected to MongoDB
+[2026-08-25 17:37:51] INFO: Server running on http://localhost:5000
+[2026-08-25 17:38:15] INFO: Connected to MongoDB
+[2026-08-25 17:38:15] INFO: Server running on http://localhost:5000
+[2026-08-25 17:38:45] INFO: Connected to MongoDB
+[2026-08-25 17:38:45] INFO: Server running on http://localhost:5000
+[2026-08-25 17:38:46] INFO: Connected to MongoDB
+[2026-08-25 17:38:46] INFO: Server running on http://localhost:5000
+[2026-08-25 17:38:51] INFO: Connected to MongoDB
+[2026-08-25 17:38:51] INFO: Server running on http://localhost:5000
+[2026-08-25 17:38:52] INFO: Connected to MongoDB
+[2026-08-25 17:38:52] INFO: Server running on http://localhost:5000
+[2026-08-25 17:39:48] INFO: Connected to MongoDB
+[2026-08-25 17:39:48] INFO: Server running on http://localhost:5000
+[2026-08-25 17:39:50] INFO: Fetching all categories
+[2026-08-25 17:39:50] INFO: Fetching paintings {}
+[2026-08-25 17:39:50] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 17:39:50] INFO: GET /api/categories [32m200[39m 50ms {"meta":{}}
+[2026-08-25 17:39:50] INFO: Fetching all categories
+[2026-08-25 17:39:50] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 17:39:50] INFO: GET /api/categories [36m304[39m 42ms {"meta":{}}
+[2026-08-25 17:39:50] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 17:39:50] INFO: GET /api/paintings? [32m200[39m 108ms {"meta":{}}
+[2026-08-25 17:39:50] INFO: Fetching paintings {}
+[2026-08-25 17:39:50] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 17:39:50] INFO: GET /api/paintings? [36m304[39m 77ms {"meta":{}}
+[2026-08-25 17:39:56] INFO: Fetching painting {"paintingId":"6a8da921de58dc16e3e8c51a"}
+[2026-08-25 17:39:56] INFO: Painting fetched successfully {"paintingId":"6a8da921de58dc16e3e8c51a","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 17:39:56] INFO: GET /api/paintings/6a8da921de58dc16e3e8c51a [32m200[39m 87ms {"meta":{}}
+[2026-08-25 17:39:56] INFO: Fetching painting {"paintingId":"6a8da921de58dc16e3e8c51a"}
+[2026-08-25 17:39:56] INFO: Painting fetched successfully {"paintingId":"6a8da921de58dc16e3e8c51a","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 17:39:56] INFO: GET /api/paintings/6a8da921de58dc16e3e8c51a [36m304[39m 83ms {"meta":{}}
+[2026-08-25 17:40:46] INFO: Connected to MongoDB
+[2026-08-25 17:40:46] INFO: Server running on http://localhost:5000
+[2026-08-25 17:43:03] INFO: Connected to MongoDB
+[2026-08-25 17:43:03] INFO: Server running on http://localhost:5000
+[2026-08-25 17:43:10] INFO: Connected to MongoDB
+[2026-08-25 17:43:10] INFO: Server running on http://localhost:5000
+[2026-08-25 17:43:55] INFO: Connected to MongoDB
+[2026-08-25 17:43:55] INFO: Server running on http://localhost:5000
+[2026-08-25 17:43:56] INFO: Connected to MongoDB
+[2026-08-25 17:43:56] INFO: Server running on http://localhost:5000
+[2026-08-25 17:46:23] INFO: Connected to MongoDB
+[2026-08-25 17:46:23] INFO: Server running on http://localhost:5000
+[2026-08-25 17:46:26] INFO: Connected to MongoDB
+[2026-08-25 17:46:26] INFO: Server running on http://localhost:5000
+[2026-08-25 17:47:32] INFO: Connected to MongoDB
+[2026-08-25 17:47:32] INFO: Server running on http://localhost:5000
+[2026-08-25 17:47:57] INFO: Connected to MongoDB
+[2026-08-25 17:47:57] INFO: Server running on http://localhost:5000
+[2026-08-25 17:48:14] INFO: Connected to MongoDB
+[2026-08-25 17:48:14] INFO: Server running on http://localhost:5000
+[2026-08-25 17:48:34] INFO: Connected to MongoDB
+[2026-08-25 17:48:34] INFO: Server running on http://localhost:5000
+[2026-08-25 17:49:43] INFO: Connected to MongoDB
+[2026-08-25 17:49:43] INFO: Server running on http://localhost:5000
+[2026-08-25 17:50:00] INFO: Connected to MongoDB
+[2026-08-25 17:50:00] INFO: Server running on http://localhost:5000
+[2026-08-25 17:50:15] INFO: Connected to MongoDB
+[2026-08-25 17:50:15] INFO: Server running on http://localhost:5000
+[2026-08-25 17:50:19] INFO: Connected to MongoDB
+[2026-08-25 17:50:19] INFO: Server running on http://localhost:5000
+[2026-08-25 17:56:42] INFO: Connected to MongoDB
+[2026-08-25 17:56:42] INFO: Server running on http://localhost:5000
+[2026-08-25 17:57:49] INFO: Connected to MongoDB
+[2026-08-25 17:57:49] INFO: Server running on http://localhost:5000
+[2026-08-25 17:57:58] INFO: Connected to MongoDB
+[2026-08-25 17:57:58] INFO: Server running on http://localhost:5000
+[2026-08-25 17:58:22] INFO: Connected to MongoDB
+[2026-08-25 17:58:22] INFO: Server running on http://localhost:5000
+[2026-08-25 17:58:44] INFO: Connected to MongoDB
+[2026-08-25 17:58:44] INFO: Server running on http://localhost:5000
+[2026-08-25 17:59:44] INFO: Connected to MongoDB
+[2026-08-25 17:59:44] INFO: Server running on http://localhost:5000
+[2026-08-25 18:00:02] INFO: Connected to MongoDB
+[2026-08-25 18:00:02] INFO: Server running on http://localhost:5000
+[2026-08-25 18:00:21] INFO: Connected to MongoDB
+[2026-08-25 18:00:21] INFO: Server running on http://localhost:5000
+[2026-08-25 18:01:25] INFO: Connected to MongoDB
+[2026-08-25 18:01:25] INFO: Server running on http://localhost:5000
+[2026-08-25 18:01:42] INFO: Connected to MongoDB
+[2026-08-25 18:01:42] INFO: Server running on http://localhost:5000
+[2026-08-25 18:02:25] INFO: Connected to MongoDB
+[2026-08-25 18:02:25] INFO: Server running on http://localhost:5000
+[2026-08-25 18:03:14] INFO: Connected to MongoDB
+[2026-08-25 18:03:14] INFO: Server running on http://localhost:5000
+[2026-08-25 18:03:53] INFO: Connected to MongoDB
+[2026-08-25 18:03:53] INFO: Server running on http://localhost:5000
+[2026-08-25 18:04:08] INFO: Connected to MongoDB
+[2026-08-25 18:04:08] INFO: Server running on http://localhost:5000
+[2026-08-25 18:04:36] INFO: Connected to MongoDB
+[2026-08-25 18:04:36] INFO: Server running on http://localhost:5000
+[2026-08-25 18:04:39] INFO: Connected to MongoDB
+[2026-08-25 18:04:39] INFO: Server running on http://localhost:5000
+[2026-08-25 18:04:47] INFO: Connected to MongoDB
+[2026-08-25 18:04:47] INFO: Server running on http://localhost:5000
+[2026-08-25 18:04:49] INFO: Connected to MongoDB
+[2026-08-25 18:04:49] INFO: Server running on http://localhost:5000
+[2026-08-25 18:05:01] INFO: Connected to MongoDB
+[2026-08-25 18:05:01] INFO: Server running on http://localhost:5000
+[2026-08-25 18:05:07] INFO: Fetching painting {"paintingId":"6a8da921de58dc16e3e8c51a"}
+[2026-08-25 18:05:07] WARN: Painting not found {"paintingId":"6a8da921de58dc16e3e8c51a"}
+[2026-08-25 18:05:07] INFO: GET /api/paintings/6a8da921de58dc16e3e8c51a [33m404[39m 59ms {"meta":{}}
+[2026-08-25 18:05:07] INFO: Fetching painting {"paintingId":"6a8da921de58dc16e3e8c51a"}
+[2026-08-25 18:05:07] WARN: Painting not found {"paintingId":"6a8da921de58dc16e3e8c51a"}
+[2026-08-25 18:05:07] INFO: GET /api/paintings/6a8da921de58dc16e3e8c51a [33m404[39m 48ms {"meta":{}}
+[2026-08-25 18:05:15] INFO: Fetching all categories
+[2026-08-25 18:05:15] INFO: Fetching paintings {}
+[2026-08-25 18:05:15] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:05:15] INFO: GET /api/categories [32m200[39m 57ms {"meta":{}}
+[2026-08-25 18:05:15] INFO: Fetching all categories
+[2026-08-25 18:05:15] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:05:15] INFO: GET /api/categories [36m304[39m 57ms {"meta":{}}
+[2026-08-25 18:05:15] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:05:15] INFO: GET /api/paintings? [32m200[39m 226ms {"meta":{}}
+[2026-08-25 18:05:15] INFO: Fetching paintings {}
+[2026-08-25 18:05:15] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:05:15] INFO: GET /api/paintings? [36m304[39m 136ms {"meta":{}}
+[2026-08-25 18:05:17] INFO: Fetching painting {"paintingId":"6a8daf195393fd8e4349cf1d"}
+[2026-08-25 18:05:17] INFO: Painting fetched successfully {"paintingId":"6a8daf195393fd8e4349cf1d","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:05:17] INFO: GET /api/paintings/6a8daf195393fd8e4349cf1d [32m200[39m 88ms {"meta":{}}
+[2026-08-25 18:05:17] INFO: Fetching painting {"paintingId":"6a8daf195393fd8e4349cf1d"}
+[2026-08-25 18:05:17] INFO: Painting fetched successfully {"paintingId":"6a8daf195393fd8e4349cf1d","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:05:17] INFO: GET /api/paintings/6a8daf195393fd8e4349cf1d [36m304[39m 82ms {"meta":{}}
+[2026-08-25 18:05:23] INFO: Fetching paintings {}
+[2026-08-25 18:05:23] INFO: Fetching all categories
+[2026-08-25 18:05:23] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:05:23] INFO: GET /api/categories [36m304[39m 43ms {"meta":{}}
+[2026-08-25 18:05:23] INFO: Fetching all categories
+[2026-08-25 18:05:23] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:05:23] INFO: GET /api/categories [36m304[39m 54ms {"meta":{}}
+[2026-08-25 18:05:23] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:05:23] INFO: GET /api/paintings? [36m304[39m 185ms {"meta":{}}
+[2026-08-25 18:05:23] INFO: Fetching paintings {}
+[2026-08-25 18:05:24] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:05:24] INFO: GET /api/paintings? [36m304[39m 141ms {"meta":{}}
+[2026-08-25 18:05:25] INFO: Fetching painting {"paintingId":"6a8daf195393fd8e4349cf23"}
+[2026-08-25 18:05:25] INFO: Painting fetched successfully {"paintingId":"6a8daf195393fd8e4349cf23","title":"The Knight in the Enchanted Garden","relatedCount":0}
+[2026-08-25 18:05:25] INFO: GET /api/paintings/6a8daf195393fd8e4349cf23 [32m200[39m 88ms {"meta":{}}
+[2026-08-25 18:05:25] INFO: Fetching painting {"paintingId":"6a8daf195393fd8e4349cf23"}
+[2026-08-25 18:05:25] INFO: Painting fetched successfully {"paintingId":"6a8daf195393fd8e4349cf23","title":"The Knight in the Enchanted Garden","relatedCount":0}
+[2026-08-25 18:05:25] INFO: GET /api/paintings/6a8daf195393fd8e4349cf23 [36m304[39m 104ms {"meta":{}}
+[2026-08-25 18:05:31] INFO: Fetching paintings {}
+[2026-08-25 18:05:31] INFO: Fetching all categories
+[2026-08-25 18:05:31] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:05:31] INFO: GET /api/categories [36m304[39m 42ms {"meta":{}}
+[2026-08-25 18:05:31] INFO: Fetching all categories
+[2026-08-25 18:05:31] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:05:31] INFO: GET /api/categories [36m304[39m 59ms {"meta":{}}
+[2026-08-25 18:05:31] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:05:31] INFO: GET /api/paintings? [36m304[39m 173ms {"meta":{}}
+[2026-08-25 18:05:31] INFO: Fetching paintings {}
+[2026-08-25 18:05:31] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:05:31] INFO: GET /api/paintings? [36m304[39m 107ms {"meta":{}}
+[2026-08-25 18:05:32] INFO: Fetching painting {"paintingId":"6a8daf195393fd8e4349cf29"}
+[2026-08-25 18:05:32] INFO: Painting fetched successfully {"paintingId":"6a8daf195393fd8e4349cf29","title":"Liberty Leading the People","relatedCount":0}
+[2026-08-25 18:05:32] INFO: GET /api/paintings/6a8daf195393fd8e4349cf29 [32m200[39m 84ms {"meta":{}}
+[2026-08-25 18:05:32] INFO: Fetching painting {"paintingId":"6a8daf195393fd8e4349cf29"}
+[2026-08-25 18:05:33] INFO: Painting fetched successfully {"paintingId":"6a8daf195393fd8e4349cf29","title":"Liberty Leading the People","relatedCount":0}
+[2026-08-25 18:05:33] INFO: GET /api/paintings/6a8daf195393fd8e4349cf29 [36m304[39m 77ms {"meta":{}}
+[2026-08-25 18:05:36] INFO: Fetching all categories
+[2026-08-25 18:05:36] INFO: Fetching paintings {}
+[2026-08-25 18:05:36] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:05:36] INFO: GET /api/categories [36m304[39m 43ms {"meta":{}}
+[2026-08-25 18:05:36] INFO: Fetching all categories
+[2026-08-25 18:05:36] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:05:36] INFO: GET /api/categories [36m304[39m 43ms {"meta":{}}
+[2026-08-25 18:05:36] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:05:36] INFO: GET /api/paintings? [36m304[39m 177ms {"meta":{}}
+[2026-08-25 18:05:36] INFO: Fetching paintings {}
+[2026-08-25 18:05:36] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:05:36] INFO: GET /api/paintings? [36m304[39m 86ms {"meta":{}}
+[2026-08-25 18:05:39] INFO: Fetching painting {"paintingId":"6a8daf195393fd8e4349cf1e"}
+[2026-08-25 18:05:39] INFO: Painting fetched successfully {"paintingId":"6a8daf195393fd8e4349cf1e","title":"Reply of the Zaporozhian Cossacks","relatedCount":0}
+[2026-08-25 18:05:39] INFO: GET /api/paintings/6a8daf195393fd8e4349cf1e [32m200[39m 95ms {"meta":{}}
+[2026-08-25 18:05:39] INFO: Fetching painting {"paintingId":"6a8daf195393fd8e4349cf1e"}
+[2026-08-25 18:05:39] INFO: Painting fetched successfully {"paintingId":"6a8daf195393fd8e4349cf1e","title":"Reply of the Zaporozhian Cossacks","relatedCount":0}
+[2026-08-25 18:05:39] INFO: GET /api/paintings/6a8daf195393fd8e4349cf1e [36m304[39m 93ms {"meta":{}}
+[2026-08-25 18:05:42] INFO: Fetching all categories
+[2026-08-25 18:05:42] INFO: Fetching paintings {}
+[2026-08-25 18:05:42] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:05:42] INFO: GET /api/categories [36m304[39m 43ms {"meta":{}}
+[2026-08-25 18:05:42] INFO: Fetching all categories
+[2026-08-25 18:05:42] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:05:42] INFO: GET /api/categories [36m304[39m 59ms {"meta":{}}
+[2026-08-25 18:05:42] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:05:42] INFO: GET /api/paintings? [36m304[39m 176ms {"meta":{}}
+[2026-08-25 18:05:42] INFO: Fetching paintings {}
+[2026-08-25 18:05:42] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:05:42] INFO: GET /api/paintings? [36m304[39m 118ms {"meta":{}}
+[2026-08-25 18:06:26] INFO: Fetching painting {"paintingId":"6a8daf195393fd8e4349cf1d"}
+[2026-08-25 18:06:27] INFO: Painting fetched successfully {"paintingId":"6a8daf195393fd8e4349cf1d","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:06:27] INFO: GET /api/paintings/6a8daf195393fd8e4349cf1d [36m304[39m 82ms {"meta":{}}
+[2026-08-25 18:06:27] INFO: Fetching painting {"paintingId":"6a8daf195393fd8e4349cf1d"}
+[2026-08-25 18:06:27] INFO: Painting fetched successfully {"paintingId":"6a8daf195393fd8e4349cf1d","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:06:27] INFO: GET /api/paintings/6a8daf195393fd8e4349cf1d [36m304[39m 81ms {"meta":{}}
+[2026-08-25 18:06:48] INFO: Connected to MongoDB
+[2026-08-25 18:06:48] INFO: Server running on http://localhost:5000
+[2026-08-25 18:06:57] INFO: Connected to MongoDB
+[2026-08-25 18:06:57] INFO: Server running on http://localhost:5000
+[2026-08-25 18:06:59] INFO: Fetching all categories
+[2026-08-25 18:06:59] INFO: Fetching paintings {}
+[2026-08-25 18:06:59] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:06:59] INFO: GET /api/categories [32m200[39m 39ms {"meta":{}}
+[2026-08-25 18:06:59] INFO: Fetching all categories
+[2026-08-25 18:06:59] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:06:59] INFO: GET /api/categories [36m304[39m 33ms {"meta":{}}
+[2026-08-25 18:06:59] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:06:59] INFO: GET /api/paintings? [32m200[39m 135ms {"meta":{}}
+[2026-08-25 18:06:59] INFO: Fetching paintings {}
+[2026-08-25 18:06:59] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:06:59] INFO: GET /api/paintings? [36m304[39m 97ms {"meta":{}}
+[2026-08-25 18:07:00] INFO: Fetching painting {"paintingId":"6a8daf8d5beef81d2b65545a"}
+[2026-08-25 18:07:00] INFO: Painting fetched successfully {"paintingId":"6a8daf8d5beef81d2b65545a","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:07:00] INFO: GET /api/paintings/6a8daf8d5beef81d2b65545a [32m200[39m 87ms {"meta":{}}
+[2026-08-25 18:07:01] INFO: Fetching painting {"paintingId":"6a8daf8d5beef81d2b65545a"}
+[2026-08-25 18:07:01] INFO: Painting fetched successfully {"paintingId":"6a8daf8d5beef81d2b65545a","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:07:01] INFO: GET /api/paintings/6a8daf8d5beef81d2b65545a [36m304[39m 76ms {"meta":{}}
+[2026-08-25 18:07:07] INFO: Fetching all categories
+[2026-08-25 18:07:07] INFO: Fetching paintings {}
+[2026-08-25 18:07:08] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:07:08] INFO: GET /api/categories [36m304[39m 37ms {"meta":{}}
+[2026-08-25 18:07:08] INFO: Fetching all categories
+[2026-08-25 18:07:08] INFO: Categories fetched successfully {"count":7}
+[2026-08-25 18:07:08] INFO: GET /api/categories [36m304[39m 33ms {"meta":{}}
+[2026-08-25 18:07:08] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:07:08] INFO: GET /api/paintings? [36m304[39m 166ms {"meta":{}}
+[2026-08-25 18:07:08] INFO: Fetching paintings {}
+[2026-08-25 18:07:08] INFO: Paintings fetched successfully {"count":24}
+[2026-08-25 18:07:08] INFO: GET /api/paintings? [36m304[39m 95ms {"meta":{}}
+[2026-08-25 18:07:20] INFO: Fetching painting {"paintingId":"6a8daf8d5beef81d2b65545a"}
+[2026-08-25 18:07:20] INFO: Painting fetched successfully {"paintingId":"6a8daf8d5beef81d2b65545a","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:07:20] INFO: GET /api/paintings/6a8daf8d5beef81d2b65545a [36m304[39m 73ms {"meta":{}}
+[2026-08-25 18:07:20] INFO: Fetching painting {"paintingId":"6a8daf8d5beef81d2b65545a"}
+[2026-08-25 18:07:20] INFO: Painting fetched successfully {"paintingId":"6a8daf8d5beef81d2b65545a","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:07:20] INFO: GET /api/paintings/6a8daf8d5beef81d2b65545a [36m304[39m 71ms {"meta":{}}
+[2026-08-25 18:07:23] INFO: Fetching painting {"paintingId":"6a8daf8d5beef81d2b65545a"}
+[2026-08-25 18:07:23] INFO: Painting fetched successfully {"paintingId":"6a8daf8d5beef81d2b65545a","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:07:23] INFO: GET /api/paintings/6a8daf8d5beef81d2b65545a [36m304[39m 70ms {"meta":{}}
+[2026-08-25 18:07:26] INFO: Fetching painting {"paintingId":"6a8daf8d5beef81d2b65545a"}
+[2026-08-25 18:07:26] INFO: Painting fetched successfully {"paintingId":"6a8daf8d5beef81d2b65545a","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:07:26] INFO: GET /api/paintings/6a8daf8d5beef81d2b65545a [36m304[39m 74ms {"meta":{}}
+[2026-08-25 18:07:29] INFO: Fetching painting {"paintingId":"6a8daf8d5beef81d2b65545a"}
+[2026-08-25 18:07:30] INFO: Painting fetched successfully {"paintingId":"6a8daf8d5beef81d2b65545a","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:07:30] INFO: GET /api/paintings/6a8daf8d5beef81d2b65545a [36m304[39m 71ms {"meta":{}}
+[2026-08-25 18:07:38] INFO: Fetching painting {"paintingId":"6a8daf8d5beef81d2b65545a"}
+[2026-08-25 18:07:38] INFO: Painting fetched successfully {"paintingId":"6a8daf8d5beef81d2b65545a","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:07:38] INFO: GET /api/paintings/6a8daf8d5beef81d2b65545a [36m304[39m 71ms {"meta":{}}
+[2026-08-25 18:07:43] INFO: Fetching painting {"paintingId":"6a8daf8d5beef81d2b65545a"}
+[2026-08-25 18:07:43] INFO: Painting fetched successfully {"paintingId":"6a8daf8d5beef81d2b65545a","title":"The Death of Socrates","relatedCount":0}
+[2026-08-25 18:07:43] INFO: GET /api/paintings/6a8daf8d5beef81d2b65545a [36m304[39m 68ms {"meta":{}}
+[2026-08-25 18:08:21] INFO: 🔗 Building relationships...
+[2026-08-25 18:08:21] INFO: Updated: The Death of Socrates
+[2026-08-25 18:08:21] INFO: Updated: Reply of the Zaporozhian Cossacks
+[2026-08-25 18:08:21] INFO: Updated: Alexander the Great Refuses Water in the Desert
+[2026-08-25 18:08:21] INFO: Updated: The Bard
+[2026-08-25 18:08:21] INFO: Updated: The Chess Players (Die Schachspieler)
+[2026-08-25 18:08:21] INFO: Updated: Daniel in the Lion's Den
+[2026-08-25 18:08:21] INFO: Updated: The Knight in the Enchanted Garden
+[2026-08-25 18:08:21] INFO: Updated: The Knight of the White Cross
+[2026-08-25 18:08:21] INFO: Updated: The Oath of the Horatii
+[2026-08-25 18:08:22] INFO: Updated: The Coronation of Napoleon
+[2026-08-25 18:08:22] INFO: Updated: The Death of Marat
+[2026-08-25 18:08:22] INFO: Updated: The Apotheosis of Homer
+[2026-08-25 18:08:22] INFO: Updated: Liberty Leading the People
+[2026-08-25 18:08:22] INFO: Updated: The Raft of the Medusa
+[2026-08-25 18:08:22] INFO: Updated: Wanderer above the Sea of Fog
+[2026-08-25 18:08:22] INFO: Updated: The Nightmare
+[2026-08-25 18:08:22] INFO: Updated: Ophelia
+[2026-08-25 18:08:22] INFO: Updated: The Isle of the Dead
+[2026-08-25 18:08:22] INFO: Updated: The Sleep of Reason Produces Monsters
+[2026-08-25 18:08:22] INFO: Updated: The Kiss
+[2026-08-25 18:08:22] INFO: Updated: The Return of the Prodigal Son
+[2026-08-25 18:08:22] INFO: Updated: The Last Supper
+[2026-08-25 18:08:22] INFO: Updated: The Creation of Adam
+[2026-08-25 18:08:22] INFO: Updated: Ivan the Terrible and His Son Ivan
+[2026-08-25 18:08:22] INFO: ✅ Done building relationships
+[2026-08-25 18:08:32] INFO: 📊 Exporting graph...
+[2026-08-25 18:08:32] INFO: ✅ graph.json exported

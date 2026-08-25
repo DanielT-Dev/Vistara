@@ -109,7 +109,12 @@ export default function PaintingDetails() {
                         <Text>{painting.medium}</Text>
                     </HStack>
 
-                    <Text color="gray.700" maxW="700px" lineHeight="1.8">
+                    <Text
+                        color="gray.700"
+                        maxW="700px"
+                        lineHeight="1.8"
+                        whiteSpace="pre-line"
+                    >
                         {painting.description}
                     </Text>
                 </VStack>
