@@ -452,9 +452,11 @@ This structure allows:
 
 ## Painting Similarity & Recommendations
 
-![cosine1](./frontend/public/tf-idf-cosine-diagram1.png)
-
 The application uses a **content-based recommendation system** to determine which paintings are most similar to each other. Each painting is compared with every other painting, and the eight highest-scoring matches are stored in its `relatedPaintings` field.
+
+![graph-ui1](./frontend/public/graph-ui-1.png)
+![graph-ui1](./frontend/public/graph-ui-2.png)
+![graph-ui1](./frontend/public/graph-ui-3.png)
 
 ### Similarity Algorithm
 
@@ -536,3 +538,4 @@ The algorithm has **O(n²)** pairwise comparison complexity because each paintin
 
 Overall, the system provides an explainable **content-based recommendation approach** without requiring machine learning or a large training dataset.
 
+![cosine1](./frontend/public/tf-idf-cosine-diagram1.png)
