@@ -449,3 +449,90 @@ This structure allows:
 ---
 
 ![image1](./frontend/public/image1.png)
+
+## Painting Similarity & Recommendations
+
+![cosine1](./frontend/public/tf-idf-cosine-diagram1.png)
+
+The application uses a **content-based recommendation system** to determine which paintings are most similar to each other. Each painting is compared with every other painting, and the eight highest-scoring matches are stored in its `relatedPaintings` field.
+
+### Similarity Algorithm
+
+The system combines **TF-IDF (Term Frequency–Inverse Document Frequency)** with **Cosine Similarity** to measure textual similarity between paintings.
+
+The process is:
+
+```text
+Painting Tags + Description
+          ↓
+      Tokenization
+          ↓
+    Term Frequency (TF)
+          ↓
+Inverse Document Frequency (IDF)
+          ↓
+       TF-IDF Vector
+          ↓
+    Cosine Similarity
+          ↓
+     Similarity Score
+```
+
+#### TF-IDF
+
+TF-IDF assigns a numerical weight to each word based on how important it is to a particular painting.
+
+* **Term Frequency (TF)** measures how often a word appears in a painting's tags and description.
+* **Inverse Document Frequency (IDF)** reduces the importance of words that appear in many paintings and increases the importance of words that are more specific to a smaller number of paintings.
+
+This prevents common words from dominating the similarity calculation. For example, a word appearing in almost every painting description will contribute much less than a distinctive word appearing in only a few paintings.
+
+#### Cosine Similarity
+
+After generating TF-IDF vectors, the system compares two paintings using **cosine similarity**.
+
+Cosine similarity measures the angle between two vectors and produces a value between `0` and `1`:
+
+```text
+0 → no similarity
+1 → identical feature distribution
+```
+
+This allows paintings with similar descriptions and tags to receive higher similarity scores even when their descriptions are not exactly the same.
+
+### Additional Domain-Specific Signals
+
+Textual similarity is combined with information specific to the art collection:
+
+| Feature                  |   Score |
+| ------------------------ | ------: |
+| TF-IDF cosine similarity |    × 10 |
+| Same artist              |      +5 |
+| Shared art movement      | +2 each |
+
+For example, two paintings with similar descriptions and tags will receive a high cosine similarity score. If they were also created by the same artist, an additional `5` points are added.
+
+This hybrid approach combines a **standard NLP similarity technique** with **domain-specific rules**, making the recommendations more relevant to the context of the museum.
+
+### Relationship Generation
+
+The relationship-building script compares every painting against every other painting, calculates their similarity score, sorts the results, and stores the top eight matches:
+
+```text
+Painting A
+ ├── Painting B → 8.42
+ ├── Painting C → 7.91
+ ├── Painting D → 6.73
+ └── ...
+
+          ↓
+
+Top 8 → relatedPaintings
+```
+
+The calculated relationships are stored directly in MongoDB, meaning they can be retrieved efficiently by the API without recalculating similarities every time a user views a painting.
+
+The algorithm has **O(n²)** pairwise comparison complexity because each painting is compared with every other painting. This is efficient for the current collection size and can be further optimized if the dataset grows significantly.
+
+Overall, the system provides an explainable **content-based recommendation approach** without requiring machine learning or a large training dataset.
+
