@@ -1,8 +1,11 @@
 # 🎨 Vistara
 
-This app is a digital gallery for browsing a collection of paintings online. It works on phones, tablets, and computers, with a clean layout that makes viewing artwork simple and pleasant.
+This app is a digital gallery for browsing and exploring a collection of paintings online. It works seamlessly across phones, tablets, and computers, with a clean, responsive layout designed to make viewing artwork simple and pleasant.
 
-The collection is stored securely in the cloud, so you can access it anytime. The app is built with modern web technologies to ensure a fast, reliable, and smooth experience.
+The application also includes a **content-based recommendation system** that analyzes each painting's tags and description, along with artist and art movement information, to discover and recommend similar artworks. This allows users to explore the collection beyond individual paintings and discover related works naturally.
+
+The collection is stored securely in the cloud, making it accessible anytime. Built with modern web technologies, the app provides a fast, reliable, and smooth experience while combining digital artwork browsing with intelligent, explainable recommendations.
+
 
 ## Technology Stack
 
