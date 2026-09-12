@@ -1,8 +1,11 @@
 # 🎨 Vistara
 
-This app is a digital gallery for browsing a collection of paintings online. It works on phones, tablets, and computers, with a clean layout that makes viewing artwork simple and pleasant.
+This app is a digital gallery for browsing and exploring a collection of paintings online. It works seamlessly across phones, tablets, and computers, with a clean, responsive layout designed to make viewing artwork simple and pleasant.
 
-The collection is stored securely in the cloud, so you can access it anytime. The app is built with modern web technologies to ensure a fast, reliable, and smooth experience.
+The application also includes a **content-based recommendation system** that analyzes each painting's tags and description, along with artist and art movement information, to discover and recommend similar artworks. This allows users to explore the collection beyond individual paintings and discover related works naturally.
+
+The collection is stored securely in the cloud, making it accessible anytime. Built with modern web technologies, the app provides a fast, reliable, and smooth experience while combining digital artwork browsing with intelligent, explainable recommendations.
+
 
 ## Technology Stack
 
@@ -449,3 +452,110 @@ This structure allows:
 ---
 
 ![image1](./frontend/public/image1.png)
+
+## Painting Similarity & Recommendations
+
+The application uses a **content-based recommendation system** to identify paintings that are most similar to one another. Similarity is determined from each painting's **tags and description**, enriched with domain-specific information such as the artist and art movement.
+
+For each painting, the system compares it against the rest of the collection, ranks the results by similarity score, and stores the **top eight recommendations** in its `relatedPaintings` field.
+
+![Painting similarity graph](./frontend/public/graph-ui-1.png)
+
+![Painting similarity graph](./frontend/public/graph-ui-2.png)
+
+![Painting similarity graph](./frontend/public/graph-ui-3.png)
+
+### Similarity Algorithm
+
+The core similarity calculation combines **TF-IDF (Term Frequency–Inverse Document Frequency)** with **Cosine Similarity**.
+
+The overall pipeline is:
+
+```text
+Tags + Description
+        ↓
+   Tokenization
+        ↓
+  TF-IDF Vector
+        ↓
+Cosine Similarity
+        ↓
+Domain-Specific Scoring
+        ↓
+   Final Score
+```
+
+### TF-IDF
+
+TF-IDF represents each painting's textual information as a numerical vector, assigning higher weights to words that are more relevant to a particular painting.
+
+* **Term Frequency (TF)** measures how frequently a word occurs in a painting's tags and description.
+* **Inverse Document Frequency (IDF)** reduces the weight of words that occur across many paintings and increases the weight of more distinctive terms.
+
+This prevents common words from dominating the recommendations. For example, a term appearing in almost every painting description contributes relatively little to the similarity score, while a distinctive term appearing in only a few paintings carries more weight.
+
+### Cosine Similarity
+
+Once each painting has been converted into a TF-IDF vector, the system compares paintings using **cosine similarity**.
+
+Cosine similarity measures the angle between two vectors and produces a value between `0` and `1`:
+
+```text
+0 → no textual similarity
+1 → identical feature distribution
+```
+
+This makes it possible to identify paintings with similar themes, subjects, styles, or descriptions even when their text is not identical.
+
+### Domain-Specific Scoring
+
+The textual similarity score is combined with additional information specific to the art collection:
+
+| Feature                  | Contribution |
+| ------------------------ | -----------: |
+| TF-IDF cosine similarity |         × 10 |
+| Same artist              |           +5 |
+| Shared art movement      |      +2 each |
+
+The final score can therefore be expressed conceptually as:
+
+```text
+Final Score =
+    (Cosine Similarity × 10)
+    + Same Artist Bonus
+    + Art Movement Bonuses
+```
+
+For example, two paintings with similar textual descriptions may already receive a high score. If they were also created by the same artist, an additional `5` points are added. Shared art movements provide further bonuses.
+
+This hybrid approach combines a **standard NLP technique** with **domain-specific signals**, making the recommendations more meaningful for the museum's collection.
+
+### Relationship Generation
+
+The relationship-building process evaluates every painting against every other painting:
+
+```text
+Painting A
+    ├── Painting B → 8.42
+    ├── Painting C → 7.91
+    ├── Painting D → 6.73
+    └── ...
+
+             ↓
+
+       Sort by score
+             ↓
+
+          Top 8
+             ↓
+
+     relatedPaintings
+```
+
+The resulting relationships are stored directly in MongoDB. This means the API can retrieve precomputed recommendations efficiently instead of recalculating similarities every time a painting is viewed.
+
+Because every painting is compared with every other painting, the relationship-generation process has **O(n²)** pairwise comparison complexity. This is appropriate for the current collection size, while larger datasets could be optimized using techniques such as vector indexing or approximate nearest-neighbor search.
+
+Overall, the system provides an **explainable content-based recommendation approach** without requiring model training or a large dataset. Each recommendation can be traced back to measurable textual similarity and clearly defined domain-specific signals.
+
+![TF-IDF and Cosine Similarity](./frontend/public/tf-idf-cosine-diagram1.png)

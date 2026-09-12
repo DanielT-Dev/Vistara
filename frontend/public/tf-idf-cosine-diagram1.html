@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painting similarity · architecture diagram</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f6f9fc;
+      font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    /* main canvas – crisp, minimal, light background */
+    .diagram {
+      max-width: 1400px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2.5rem;
+      box-shadow: 0 20px 40px -12px rgba(0, 20, 40, 0.12), 0 8px 24px -6px rgba(0, 20, 30, 0.08);
+      padding: 2.5rem 2rem 3rem;
+      transition: all 0.2s;
+    }
+
+    /* header / title area */
+    .diagram-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .diagram-header h1 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b1e2e;
+      background: linear-gradient(145deg, #0b1e2e 0%, #1d3b5c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-right: auto;
+    }
+
+    .badge {
+      background: #e8f0fe;
+      color: #1a5c9e;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      letter-spacing: 0.01em;
+      border: 1px solid #cbdff5;
+    }
+
+    /* pipeline grid – 4 columns, 2 rows landscape flow */
+    .pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem 1rem;
+      position: relative;
+    }
+
+    /* cards */
+    .card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 1.5rem 1.25rem 1.25rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e9eef3;
+      transition: all 0.15s;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      min-height: 200px;
+    }
+
+    /* stage number badge */
+    .stage-num {
+      position: absolute;
+      top: -0.75rem;
+      left: 1.25rem;
+      background: #0b1e2e;
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 600;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      border: 2px solid white;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0.5rem 0 0.75rem;
+      color: #0d2740;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card h3 span {
+      font-size: 1.2rem;
+    }
+
+    /* list inside cards */
+    .card ul {
+      list-style: none;
+      font-size: 0.9rem;
+      color: #2b4b6e;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .card ul li::before {
+      content: "•";
+      color: #2f7bb8;
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+
+    .annotation {
+      font-size: 0.78rem;
+      background: #f0f6fd;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.75rem;
+      color: #1b4a75;
+      border-left: 3px solid #3b8fd9;
+      margin-top: auto;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    /* formula */
+    .formula {
+      background: #f4f9ff;
+      border-radius: 12px;
+      padding: 0.6rem 0.5rem;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      text-align: center;
+      color: #0b2f4f;
+      border: 1px solid #d4e3f5;
+      margin: 0.4rem 0 0.6rem;
+      font-weight: 500;
+    }
+
+    .math-soft {
+      background: #eef4fa;
+      border-radius: 8px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      color: #1e5a8a;
+      display: inline-block;
+    }
+
+    /* domain card special */
+    .domain-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      font-size: 0.9rem;
+      background: #f9fcff;
+      padding: 0.35rem 0.65rem;
+      border-radius: 10px;
+      border: 1px solid #e0ebf5;
+    }
+
+    .badge-plus {
+      background: #daf1e4;
+      color: #0b6e4f;
+      font-weight: 700;
+      border-radius: 30px;
+      padding: 0.1rem 0.6rem;
+      font-size: 0.75rem;
+      margin-left: 0.25rem;
+    }
+
+    /* final score card */
+    .final-score {
+      background: linear-gradient(135deg, #f1f9ff 0%, #ffffff 100%);
+      border: 1px solid #c2dcf5;
+    }
+
+    .score-preview {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0b1e2e;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.5rem 0 0.25rem;
+    }
+
+    .score-preview small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #4d6f8f;
+    }
+
+    /* arrows – using pseudo elements & svg-style lines */
+    .arrow-right, .arrow-down {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #99b8d4;
+      font-size: 1.6rem;
+      font-weight: 300;
+      opacity: 0.8;
+    }
+
+    /* manual arrow connectors via grid pseudo */
+    .pipeline-grid {
+      position: relative;
+    }
+
+    /* horizontal arrows for row 1 (first row of cards) */
+    .arrow-h1 {
+      position: absolute;
+      top: 5.5rem;
+      left: 22%;
+      font-size: 1.8rem;
+      color: #a0bedb;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* better to use explicit arrow SVGs in layout — we'll add flexible connectors via absolute divs */
+    .arrow-abs {
+      position: absolute;
+      color: #b0cbe4;
+      font-size: 2rem;
+      font-weight: 300;
+      z-index: 10;
+      opacity: 0.9;
+      line-height: 1;
+      user-select: none;
+    }
+
+    /* responsiveness */
+    @media (max-width: 1000px) {
+      .pipeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1rem;
+      }
+      .arrow-abs {
+        display: none;
+      }
+      .card {
+        min-height: auto;
+      }
+      .diagram {
+        padding: 1.8rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .pipeline-grid {
+        grid-template-columns: 1fr;
+      }
+      .diagram-header h1 {
+        font-size: 1.4rem;
+      }
+      .badge {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.7rem;
+      }
+    }
+
+    /* icon minimal (text-based) */
+    .icon {
+      font-size: 1.2rem;
+      line-height: 1;
+      filter: grayscale(20%);
+    }
+
+    /* MongoDB special styling */
+    .mongo-badge {
+      background: #e5f2e5;
+      color: #1e6b3b;
+      font-weight: 600;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 60px;
+      display: inline-block;
+      margin-left: 0.4rem;
+      border: 1px solid #b8d9c5;
+    }
+
+    hr {
+      border: 0.5px solid #e2ecf5;
+      margin: 0.4rem 0;
+    }
+
+    /* clean arrow svg inline */
+    .inline-arrow {
+      color: #9db9d6;
+      font-size: 1.2rem;
+      margin: 0 0.15rem;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<div class="diagram">
+  <div class="diagram-header">
+    <h1>🎨 Painting similarity · recommendation pipeline</h1>
+    <div class="badge">TF-IDF · Cosine · Domain signals</div>
+  </div>
+
+  <!-- grid container with absolute arrow markers later -->
+  <div class="pipeline-grid" id="pipelineGrid">
+    <!-- Stage 1 – Painting data -->
+    <div class="card">
+      <div class="stage-num">1</div>
+      <h3><span>🖼️</span> Painting data</h3>
+      <ul>
+        <li>Tags</li>
+        <li>Description</li>
+      </ul>
+      <div class="annotation" style="margin-top:0.5rem;">Raw metadata</div>
+    </div>
+
+    <!-- Stage 2 – Text processing -->
+    <div class="card">
+      <div class="stage-num">2</div>
+      <h3><span>🔤</span> Text processing</h3>
+      <ul>
+        <li>Tokenization</li>
+        <li>Normalization</li>
+        <li>Filtering short words</li>
+      </ul>
+      <div class="annotation" style="margin-top:0.5rem;">Clean tokens</div>
+    </div>
+
+    <!-- Stage 3 – TF-IDF -->
+    <div class="card">
+      <div class="stage-num">3</div>
+      <h3><span>📊</span> TF-IDF</h3>
+      <ul>
+        <li>Term Frequency (TF)</li>
+        <li>Inverse Document Frequency (IDF)</li>
+        <li>TF-IDF feature vector</li>
+      </ul>
+      <div class="annotation" style="font-size:0.75rem;">
+        Common words → lower importance<br>Distinctive words → higher importance
+      </div>
+    </div>
+
+    <!-- Stage 4 – Cosine Similarity -->
+    <div class="card">
+      <div class="stage-num">4</div>
+      <h3><span>📐</span> Cosine similarity</h3>
+      <div style="font-size:0.9rem; color:#1a3f5e; margin-bottom:0.25rem;">Compare TF-IDF vectors</div>
+      <div class="formula">
+        cos(θ) = (A · B) / (||A|| ||B||)
+      </div>
+      <div style="font-size:0.8rem; color:#4b6f8e; margin-top:0.25rem;">vector angle → similarity</div>
+    </div>
+
+    <!-- Stage 5 – Domain-specific signals -->
+    <div class="card">
+      <div class="stage-num">5</div>
+      <h3><span>🎭</span> Domain signals</h3>
+      <div class="domain-row">Same artist <span class="badge-plus">+5</span></div>
+      <div class="domain-row" style="flex-wrap:wrap; gap:0.3rem;">Shared art movement <span class="badge-plus">+2 / movement</span></div>
+      <div class="annotation" style="margin-top:0.8rem;">Semantic boost</div>
+    </div>
+
+    <!-- Stage 6 – Final similarity score -->
+    <div class="card final-score">
+      <div class="stage-num">6</div>
+      <h3><span>⚖️</span> Final similarity score</h3>
+      <div class="score-preview">
+        S<sub>total</sub> = cos(θ) + boosts
+      </div>
+      <div style="font-size:0.85rem; color:#2d5278; background:#e8f0fe; padding:0.4rem 0.8rem; border-radius:60px; display:inline-block; margin-top:0.4rem;">
+        base + artist + movement
+      </div>
+    </div>
+
+    <!-- Stage 7 – Ranking -->
+    <div class="card">
+      <div class="stage-num">7</div>
+      <h3><span>🏆</span> Ranking</h3>
+      <ul>
+        <li>Compare against all paintings</li>
+        <li>Sort by similarity score</li>
+        <li>Select Top 8</li>
+      </ul>
+      <div class="annotation" style="margin-top:0.25rem;">Top‑8 recommended</div>
+    </div>
+
+    <!-- Stage 8 – MongoDB -->
+    <div class="card">
+      <div class="stage-num">8</div>
+      <h3><span>🗄️</span> MongoDB</h3>
+      <div style="margin: 0.3rem 0 0.5rem;">
+        <span class="mongo-badge">relatedPaintings</span>
+      </div>
+      <div style="font-size:0.85rem; color:#2b4b6e; background:#f6fafd; padding:0.45rem; border-radius:10px;">
+        ⤷ store top 8 IDs & scores
+      </div>
+    </div>
+  </div>
+
+  <!-- Clean directional arrows overlay (absolutely positioned) -->
+  <!-- row 1 arrows (stages 1→2, 2→3, 3→4) -->
+  <div class="arrow-abs" style="top: 4.2rem; left: 24.2%; transform: translateX(-50%);">→</div>
+  <div class="arrow-abs" style="top: 4.2rem; left: 49.2%; transform: translateX(-50%);">→</div>
+  <div class="arrow-abs" style="top: 4.2rem; left: 74.2%; transform: translateX(-50%);">→</div>
+
+  <!-- vertical / connection from 4 to 5? Actually our grid is 4 columns → row1: 1,2,3,4 ; row2: 5,6,7,8.
+       We need arrow from stage 4 to stage 5 (downward). Stage 4 is at row1 col4, stage 5 row2 col1.
+       That's a long path but we can indicate a 'continued flow' with a curved arrow note, or better: add a small 
+       'next row' indicator. We'll place a subtle '↓' near right edge to hint flow continuation. -->
+  <!-- Downward hint from stage4 to stage5 (row1 col4 -> row2 col1) — we show a small curved arrow between rows -->
+  <!-- Better: put a 'flow continues' dashed line and arrow from end of row1 to start of row2 -->
+  <div style="position: absolute; bottom: -1.8rem; left: 2rem; right: 2rem; display: flex; justify-content: space-between; align-items: center; color: #b0cbe4; font-size: 1.2rem; pointer-events: none;">
+    <span style="opacity:0.5;">⤵</span>
+    <span style="opacity:0.5;">⤵</span>
+    <span style="opacity:0.5;">⤵</span>
+    <span style="opacity:0.7; font-weight:300;">↓ continue to row 2</span>
+  </div>
+
+  <!-- row2 internal arrows (5→6, 6→7, 7→8) -->
+  <div class="arrow-abs" style="bottom: 7.4rem; left: 24.2%; transform: translateX(-50%);">→</div>
+  <div class="arrow-abs" style="bottom: 7.4rem; left: 49.2%; transform: translateX(-50%);">→</div>
+  <div class="arrow-abs" style="bottom: 7.4rem; left: 74.2%; transform: translateX(-50%);">→</div>
+
+  <!-- additional arrow from 4 to 5: we can add a subtle curved arrow label — but not needed; we'll just note the flow.
+       however, to be more explicit we put a small '4→5' vertical indicator on the right side -->
+  <div style="position: absolute; top: 9.5rem; right: 1rem; font-size: 0.9rem; color: #96b6d6; background: #f0f7ff; padding: 0.2rem 0.8rem; border-radius: 30px; border: 1px dashed #b8d2ec; white-space: nowrap;">
+    ↳ 4 → 5
+  </div>
+
+  <!-- overall flow arrow between rows (small) -->
+  <div style="position: absolute; top: 13.5rem; left: 50%; transform: translateX(-50%); font-size: 1.8rem; color: #bfd6ec;">⤵</div>
+
+  <!-- footer small legend -->
+  <div style="display: flex; justify-content: flex-end; align-items: center; gap: 1.5rem; margin-top: 2rem; font-size: 0.75rem; color: #6b8aa8; border-top: 1px solid #e5eef7; padding-top: 1rem;">
+    <div style="display: flex; align-items: center; gap: 0.3rem;"><span style="display: inline-block; width: 8px; height: 8px; background: #3b8fd9; border-radius: 2px;"></span> data flow</div>
+    <div style="display: flex; align-items: center; gap: 0.3rem;"><span style="display: inline-block; width: 8px; height: 8px; background: #0b1e2e; border-radius: 50%;"></span> stage</div>
+    <div>painting‑similarity v1.0</div>
+  </div>
+</div>
+
+<!-- additional styling to adjust arrow positions for larger screens -->
+<style>
+  @media (min-width: 1100px) {
+    .arrow-abs {
+      font-size: 2rem;
+      color: #b2cde6;
+    }
+    .arrow-abs[style*="top: 4.2rem"] {
+      top: 5rem !important;
+    }
+    .arrow-abs[style*="bottom: 7.4rem"] {
+      bottom: 6.8rem !important;
+    }
+  }
+  @media (max-width: 1000px) {
+    .arrow-abs, div[style*="position: absolute; bottom: -1.8rem"], div[style*="4 → 5"], div[style*="⤵"] {
+      display: none !important;
+    }
+    .diagram {
+      padding: 2rem 1.5rem;
+    }
+    .pipeline-grid {
+      gap: 2rem 1rem;
+    }
+  }
+
+  /* fine-tune card min-height */
+  .card {
+    min-height: 195px;
+  }
+</style>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b7c9d"/>
+    </marker>
+    <marker id="arrowDown" viewBox="0 0 10 10" refX="5" refY="9"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L5,10 L10,0 z" fill="#5b7c9d"/>
+    </marker>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0b1e2e" flood-opacity="0.08"/>
+    </filter>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b8fd9"/>
+      <stop offset="100%" stop-color="#2f6fa8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1400" height="720" fill="#f7fafd"/>
+
+  <!-- title -->
+  <text x="60" y="70" font-size="26" font-weight="700" fill="#0b1e2e">
+    Painting Similarity — Recommendation Pipeline
+  </text>
+  <text x="60" y="98" font-size="14" fill="#5b7c9d">
+    TF‑IDF · Cosine Similarity · Domain Signals → Top‑8 related paintings
+  </text>
+
+  <!-- ================= SPINE ================= -->
+  <!-- main horizontal line -->
+  <line x1="100" y1="330" x2="1300" y2="330"
+        stroke="#cddcec" stroke-width="3" stroke-dasharray="0"/>
+
+  <!-- Stage 1 -->
+  <g filter="url(#soft)">
+    <rect x="100" y="260" width="150" height="140" rx="14" fill="#ffffff" stroke="#d9e6f2"/>
+    <rect x="100" y="260" width="150" height="4" rx="2" fill="url(#accent)"/>
+    <circle cx="130" cy="292" r="12" fill="#0b1e2e"/>
+    <text x="130" y="297" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+    <text x="175" y="298" font-size="14" font-weight="600" fill="#0b1e2e">Painting</text>
+    <text x="175" y="316" font-size="14" font-weight="600" fill="#0b1e2e">Data</text>
+    <text x="120" y="350" font-size="12" fill="#3d5f80">• Tags</text>
+    <text x="120" y="370" font-size="12" fill="#3d5f80">• Description</text>
+  </g>
+
+  <!-- arrow 1→2 -->
+  <line x1="250" y1="330" x2="290" y2="330" stroke="#5b7c9d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2 -->
+  <g filter="url(#soft)">
+    <rect x="290" y="260" width="150" height="140" rx="14" fill="#ffffff" stroke="#d9e6f2"/>
+    <rect x="290" y="260" width="150" height="4" rx="2" fill="url(#accent)"/>
+    <circle cx="320" cy="292" r="12" fill="#0b1e2e"/>
+    <text x="320" y="297" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+    <text x="365" y="298" font-size="14" font-weight="600" fill="#0b1e2e">Text</text>
+    <text x="365" y="316" font-size="14" font-weight="600" fill="#0b1e2e">Processing</text>
+    <text x="310" y="350" font-size="12" fill="#3d5f80">• Tokenization</text>
+    <text x="310" y="370" font-size="12" fill="#3d5f80">• Normalization</text>
+    <text x="310" y="390" font-size="12" fill="#3d5f80">• Filter short words</text>
+  </g>
+
+  <!-- arrow 2→3 -->
+  <line x1="440" y1="330" x2="480" y2="330" stroke="#5b7c9d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 3 -->
+  <g filter="url(#soft)">
+    <rect x="480" y="260" width="150" height="140" rx="14" fill="#ffffff" stroke="#d9e6f2"/>
+    <rect x="480" y="260" width="150" height="4" rx="2" fill="url(#accent)"/>
+    <circle cx="510" cy="292" r="12" fill="#0b1e2e"/>
+    <text x="510" y="297" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+    <text x="555" y="298" font-size="14" font-weight="600" fill="#0b1e2e">TF‑IDF</text>
+    <text x="500" y="350" font-size="12" fill="#3d5f80">• Term Frequency</text>
+    <text x="500" y="370" font-size="12" fill="#3d5f80">• Inverse Doc Freq</text>
+    <text x="500" y="390" font-size="12" fill="#3d5f80">• Feature vector</text>
+  </g>
+
+  <!-- callout for stage 3 -->
+  <line x1="555" y1="240" x2="555" y2="180" stroke="#b7cde2" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect x="420" y="130" width="270" height="50" rx="10" fill="#eef5fb" stroke="#cfe0ef"/>
+  <text x="555" y="152" font-size="11" fill="#1b4a75" text-anchor="middle" font-weight="600">
+    Common words → lower importance
+  </text>
+  <text x="555" y="170" font-size="11" fill="#1b4a75" text-anchor="middle" font-weight="600">
+    Distinctive words → higher importance
+  </text>
+
+  <!-- arrow 3→4 -->
+  <line x1="630" y1="330" x2="670" y2="330" stroke="#5b7c9d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 4 -->
+  <g filter="url(#soft)">
+    <rect x="670" y="260" width="170" height="140" rx="14" fill="#ffffff" stroke="#d9e6f2"/>
+    <rect x="670" y="260" width="170" height="4" rx="2" fill="url(#accent)"/>
+    <circle cx="700" cy="292" r="12" fill="#0b1e2e"/>
+    <text x="700" y="297" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+    <text x="745" y="298" font-size="14" font-weight="600" fill="#0b1e2e">Cosine</text>
+    <text x="745" y="316" font-size="14" font-weight="600" fill="#0b1e2e">Similarity</text>
+    <rect x="690" y="338" width="130" height="42" rx="8" fill="#f4f9ff" stroke="#d4e3f5"/>
+    <text x="755" y="358" font-size="11" font-family="monospace" fill="#0b2f4f" text-anchor="middle">
+      cos(θ) =
+    </text>
+    <text x="755" y="373" font-size="11" font-family="monospace" fill="#0b2f4f" text-anchor="middle">
+      (A·B) / (||A|| ||B||)
+    </text>
+  </g>
+
+  <!-- arrow 4→5 (down then left) -->
+  <path d="M 840 330 L 870 330 L 870 500 L 200 500 L 200 530"
+        fill="none" stroke="#5b7c9d" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- Stage 5 -->
+  <g filter="url(#soft)">
+    <rect x="120" y="530" width="170" height="140" rx="14" fill="#ffffff" stroke="#d9e6f2"/>
+    <rect x="120" y="530" width="170" height="4" rx="2" fill="url(#accent)"/>
+    <circle cx="150" cy="562" r="12" fill="#0b1e2e"/>
+    <text x="150" y="567" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+    <text x="195" y="568" font-size="14" font-weight="600" fill="#0b1e2e">Domain</text>
+    <text x="195" y="586" font-size="14" font-weight="600" fill="#0b1e2e">Signals</text>
+    <text x="140" y="620" font-size="12" fill="#3d5f80">Same artist</text>
+    <text x="265" y="620" font-size="12" font-weight="700" fill="#0b6e4f" text-anchor="end">+5</text>
+    <text x="140" y="642" font-size="12" fill="#3d5f80">Shared movement</text>
+    <text x="265" y="642" font-size="12" font-weight="700" fill="#0b6e4f" text-anchor="end">+2 each</text>
+  </g>
+
+  <!-- arrow 5→6 -->
+  <line x1="290" y1="600" x2="360" y2="600" stroke="#5b7c9d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 6 -->
+  <g filter="url(#soft)">
+    <rect x="360" y="530" width="180" height="140" rx="14" fill="#ffffff" stroke="#c2dcf5"/>
+    <rect x="360" y="530" width="180" height="4" rx="2" fill="url(#accent)"/>
+    <circle cx="390" cy="562" r="12" fill="#0b1e2e"/>
+    <text x="390" y="567" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+    <text x="435" y="568" font-size="14" font-weight="600" fill="#0b1e2e">Final</text>
+    <text x="435" y="586" font-size="14" font-weight="600" fill="#0b1e2e">Similarity Score</text>
+    <text x="450" y="625" font-size="14" font-weight="700" fill="#0b1e2e" text-anchor="middle">
+      S = cos(θ) + boosts
+    </text>
+  </g>
+
+  <!-- arrow 6→7 -->
+  <line x1="540" y1="600" x2="610" y2="600" stroke="#5b7c9d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 7 -->
+  <g filter="url(#soft)">
+    <rect x="610" y="530" width="180" height="140" rx="14" fill="#ffffff" stroke="#d9e6f2"/>
+    <rect x="610" y="530" width="180" height="4" rx="2" fill="url(#accent)"/>
+    <circle cx="640" cy="562" r="12" fill="#0b1e2e"/>
+    <text x="640" y="567" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">7</text>
+    <text x="685" y="568" font-size="14" font-weight="600" fill="#0b1e2e">Ranking</text>
+    <text x="630" y="610" font-size="12" fill="#3d5f80">• Compare all paintings</text>
+    <text x="630" y="630" font-size="12" fill="#3d5f80">• Sort by score</text>
+    <text x="630" y="650" font-size="12" fill="#3d5f80">• Select Top 8</text>
+  </g>
+
+  <!-- arrow 7→8 -->
+  <line x1="790" y1="600" x2="860" y2="600" stroke="#5b7c9d" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 8 -->
+  <g filter="url(#soft)">
+    <rect x="860" y="530" width="200" height="140" rx="14" fill="#ffffff" stroke="#d9e6f2"/>
+    <rect x="860" y="530" width="200" height="4" rx="2" fill="url(#accent)"/>
+    <circle cx="890" cy="562" r="12" fill="#0b1e2e"/>
+    <text x="890" y="567" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">8</text>
+    <text x="935" y="568" font-size="14" font-weight="600" fill="#0b1e2e">MongoDB</text>
+    <rect x="885" y="595" width="150" height="34" rx="17" fill="#e5f2e5" stroke="#b8d9c5"/>
+    <text x="960" y="617" font-size="13" font-weight="600" fill="#1e6b3b" text-anchor="middle">
+      relatedPaintings
+    </text>
+    <text x="960" y="655" font-size="11" fill="#3d5f80" text-anchor="middle">
+      store top‑8 results
+    </text>
+  </g>
+
+  <!-- footer -->
+  <text x="60" y="700" font-size="11" fill="#8aa6c2">
+    painting-similarity · architecture diagram
+  </text>
+  <text x="1340" y="700" font-size="11" fill="#8aa6c2" text-anchor="end">
+    vector · TF‑IDF · cosine
+  </text>
+</svg>
